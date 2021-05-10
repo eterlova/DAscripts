@@ -6,9 +6,9 @@ Trying to understand why trimmomatic ignored samples 1-3 by making a loop to pri
 
 for i in {1..36}
 do
-for file in ./"ET*_S${i}_R1".gz
+for file in ./*"S"$i"_R1"*
 do
-echo $file
+echo "$file"
 done
 echo ""
 done
