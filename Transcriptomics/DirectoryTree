@@ -1,0 +1,15 @@
+/home/CAM/eterlova/2021DA_transcriptomes/
+├── data
+    ├── LTervola_RNASeq_April2021 #directory with raw reads
+        ├── ET001_S1_L001_R1_001.fastq.gz
+        ├── ET001_S1_L001_R2_001.fastq.gz
+        ├── ...
+        ├── ET036_S36_L001_R1_001.fastq.gz
+        ├── ET036_S36_L001_R2_001.fastq.gz
+    ├── copy.sh #script to copy the raw reads into this folder
+├── 01_QC
+    ├── qc_raw.sh #script to summarize stats for raw reads (results in .html file)
+    ├── qc_trimmed.sh #script to summarize stats for trimmed reads (results in .html file)
+    ├── trimmomatic.sh #script for trimming with Trimmomatic (problematic)
+    ├── singles_trim* #reads that after trimming lost their pair
+    ├── trim_S* #trimmed paired reads
