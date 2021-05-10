@@ -1,0 +1,197 @@
+Genomics log
+
+April 20, 2021
+to grab a first word from every line
+awk '{print $1}' file
+
+/home/CAM/eterlova/2021DA_genomes
+
+April 13, 2021
+Assembly with Shasta
+if fails, remove the --assemblyDirectory line (only allowed in command line)
+note: tutorial uses himem node for shasta, but that job have never began, using himem2 started it immediately. 
+
+Shasta ZA17 9 min O_o
+
+
+Assembly with Flye
+* genome size estimate can be rough (used 150m)
+* to select 2-4 lines of fastq file and write it as fasta
+sed -n '1~4s/^@/>/p;2~4p' INFILE.fastq > OUTFILE.fasta
+
+Flye ZA17 04h 23min
+     JT2
+
+******
+Issues with JT2_trimmed.fasta -- multiple reads with the same name
+count # of reads
+ grep ">" file.fasta | wc -l
+count # of unique names
+ cat <file_name> | grep -v '>'|sort|uniq|wc -l
+
+
+April 8, 2021
+Porechop
+ZA17 15hrs
+JT2 1d 22hrs
+CCAP 2d 10hrs
+
+
+April 7, 2021
+Porechop
+use 10G, my default memory requirement (128M) is very small for maybe most of my jobs
+
+
+March 25, 2021
+nanoplot JT2 after centrifuge
+nanoplot CCAP before centrifuge
+nanoplot CCAP after centrifuge
+
+
+
+March 23, 2021
+Goal: uncompress the archive -- looks like it finally worked!
+tar -xzf ./2021FEB08_Terlova_AlgPool_PAG49760.tar.gz
+# I think with z flag even my initial line that specified that I only want fastq files would have worked
+# the job took 8 hours
+
+Result:
+/home/CAM/eterlova/2021DA_genomes/data/2021FEB08_Terlova_AlgPool_PAG49760/2021FEB08_Terlova_AlgPool_PAG49760/20210208_1948_2G_PAG49760_11f79328
+
+this directory contains
+fast5_fail
+fast5_pass
+fastq_fail
+mux_scan_data_PAG49760_0e27a3a7.csv
+final_summary_PAG49760_0e27a3a7.txt
+report_PAG49760_20210208_1952_11f79328.md
+report_PAG49760_20210208_1952_11f79328.pd
+throughput_PAG49760_0e27a3a7.csv
+
+fastq_pass
+sequencing_summary_PAG49760_0e27a3a7.txt
+
+Goal: concatenate fastq reads for each strain
+for i in `ls *.fastq`; do cat $i >> ZA17_all.fastq; echo "Completed"; done
+
+1) barcode01 (ZA17)
+ls /etc | wc -l # to count number of files in the folder: 298; useless number because each file contains many reads
+
+wc -l ZA17_all.fastq # to count number of lines in the new concatenated file # 6987492/4=1,746,873
+
+/home/CAM/eterlova/2021DA_genomes/data/2021FEB08_Terlova_AlgPool_PAG49760/2021FEB08_Terlova_AlgPool_PAG49760/20210208_1948_2G_PAG49760_11f79328/fastq_pass/barcode01
+
+Goal: run nanoplot on each strain
+Goal: run centrifuge for each strain
+
+
+March 19, 2021
+
+Goal: run centrifuge script on ZA17 (barcode01) reads
+
+Error: Read 93d5d395-4804-4354-9b7b-29a1187d937d runid=0e27a3a707535d218f0bd9d8dcd16d95ca177bd9 read=24076 ch=1702 start_time=2021-02-09T09:19:46Z flow_cell_id=PAG49760 protocol_group_id=2021FEB08_Terlova_AlgPool_PAG49760 sample_id=2021FEB08_Terlova_AlgPool_PAG49760 barcode=barcode01 has more read characters than quality values.
+terminate called after throwing an instance of 'int'
+(ERR): centrifuge-class died with signal 6 (ABRT) 
+
+Goal: run nanoplot for initial QC
+ZA17-initial-summary-plots-log-transformed -- for the pre-centrifuge fastq files basecalled by the fast method
+
+# reason that these jobs failed is that my unarchiving corrupted the fastq files
+
+March 16, 2021
+
+Goal: run centrifuge script on ZA17 (barcode01) reads
+
+1) put all barcode01 fastq files into one file called ZA17_all.fastq (prints Completed for each file it processes, 172 files processed)
+for i in `ls *.fastq`; do cat $i >> ZA17_all.fastq; echo "Completed"; done
+
+Question: is there a way to check how did it do?
+
+Script so far
+
+#SBATCH --job-name=centrifuge_ZA17
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 18
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --mail-type=END
+#SBATCH --mem=40G
+#SBATCH --mail-user=elizaveta.terlova@uconn.edu
+#SBATCH -o %x_%j.out
+#SBATCH -e %x_%j.err
+
+module load centrifuge/1.0.4-beta
+
+workingdir=/home/CAM/eterlova/2021DA_genomes/
+indexdir=/projects/EBP/Wegrzyn/Moss/ppyriforme/initial_analysis/centrifuge_14813/centrifuge_analysis/1_index/
+
+centrifuge --un $workingdir/centrifuge/abv_fungi_unclassified_reads_from_centrifuge\ #where I want good reads
+ --mm\ 
+ --min-hitlen 30\ 
+ --report-file $workingdir/centrifuge/abv_fungi_unclassified_reads_from_centrifug/centrifuge_abvf_30.tsv\ #where I want the report file
+ -p 12\ # number of theads to use
+ -x $indexdir/abv/index/abv\ #the data base file for bacteria, archea, and viruses
+ -x $indexdir/fungi/fungi\  # fungi data base
+ -U $workingdir/data/fastq_pass/barcode01/ZA17_all.fastq
+
+Original script
+
+#!/bin/bash
+#SBATCH --job-name=centrifuge_ppyriforme_all
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 18
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --mail-type=END
+#SBATCH --mem=40G
+#SBATCH --mail-user=nikisha.patel@uconn.edu
+#SBATCH -o %x_%j.out
+#SBATCH -e %x_%j.err
+
+module load centrifuge/1.0.4-beta
+
+workingdir=/projects/EBP/Wegrzyn/Moss/ppyriforme/assembly/
+indexdir=/projects/EBP/Wegrzyn/Moss/ppyriforme/initial_analysis/centrifuge_14813/centrifuge_analysis/1_index/
+
+centrifuge --un $workingdir/centrifuge/abv_fungi_unclassified_reads_from_centrifuge --mm --min-hitlen 30 --report-file $workingdir/centrifuge/abv_fungi_unclassified_reads_from_centrifug/centrifuge_abvf_30.tsv -p 12 -x $indexdir/abv/index/abv -x $indexdir/fungi/fungi  -U $workingdir/data/2020NOV11_Goffinet_3798A_PAG01750/fastq_pass/PAG01750_pass_2e5a7426_all.fastq
+
+
+March 9, 2021
+
+Unzipped the fastq files from the original tar.gz folder that came from the sequencer
+somewhat successful, unzipping worked, but the new folder was put into the folder with the archive instead of the specified one.
+
+The unzipped folder has the following structure:
+
+2021FEB08_Terlova_AlgPool_PAG49760
+ 2021FEB08_Terlova_AlgPool_PAG49760
+  20210208_1948_2G_PAG49760_11f79328
+   fastq_pass
+    barcode01
+     *many fastq files
+    barcode09
+     *one fastq file
+    barcode05
+     *one fastq file
+    barcode03
+     *many fastq files
+    unclassified
+     *many fastq files
+    barcode12
+     *one fastq file
+    barcode06
+     *one fastq file
+    barcode11
+     *one fastq file
+    barcode07
+     *one fastq file
+    barcode04
+     *one fastq file
+    barcode02
+     *many fastq file
+
+Questions:
+- why there are more than 3 barcodes?
+- what to do with the unclassified reads?
