@@ -1,5 +1,8 @@
 Genomics log
 
+May 17, 2021
+CCAP flye & shasta assembly started
+
 April 20, 2021
 to grab a first word from every line
 awk '{print $1}' file
