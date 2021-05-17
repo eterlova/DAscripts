@@ -1,4 +1,13 @@
 Transcriptomics log
+May 17, 2021
+Solved the loop, needed to move * in input files
+
+May 11, 2021
+From Jill about better Trimmomatic settings:
+For Trimmomatic, include the nextera adaptor in your run to remove this part. # i.e. do both 
+You can use a minimum quality score of 28 and 4bp window,
+also remove leading and trailing.
+Keep sequence minimum length at 42bp. After this, let’s look at MultiQC and see where we are with read numbers. You should gain a little bit back. 
 
 
 May 10, 2021
