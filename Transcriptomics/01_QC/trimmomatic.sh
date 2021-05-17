@@ -18,8 +18,8 @@ module load Trimmomatic/0.39
 
 for i in {1..36}
 do java -jar $Trimmomatic PE -threads 4 \
-        /home/CAM/eterlova/2021DA_transcriptomes/data/LTervola_RNASeq_April2021/ET*_S"$i"*_R1_001.fastq.gz \
-        /home/CAM/eterlova/2021DA_transcriptomes/data/LTervola_RNASeq_April2021/ET*_S"$i"*_R2_001.fastq.gz \
+        /home/CAM/eterlova/2021DA_transcriptomes/data/LTervola_RNASeq_April2021/ET*_S"$i"_*R1_001.fastq.gz \
+        /home/CAM/eterlova/2021DA_transcriptomes/data/LTervola_RNASeq_April2021/ET*_S"$i"_*R2_001.fastq.gz \
         trim_S"$i"_R1.fastq.gz singles_trim_S"$i"_R1.fastq.gz \
         trim_S"$i"_R2.fastq.gz singles_trim_S"$i"_R2.fastq.gz \
         ILLUMINACLIP:/isg/shared/apps/Trimmomatic/0.36/adapters/NexteraPE-PE.fa:2:30:10 \
