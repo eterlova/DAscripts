@@ -1,5 +1,11 @@
 Genomics log
 
+May 18, 2021
+CCAP Shasta -- error, looking into it
+Emailed Nicole about JT2 data being duplicated (other genomes are ok)
+
+BUSCO evaluation of ZA17 and CCAP assemblies
+
 May 17, 2021
 CCAP flye & shasta assembly started
 
@@ -24,7 +30,7 @@ sed -n '1~4s/^@/>/p;2~4p' INFILE.fastq > OUTFILE.fasta
 
 Flye ZA17 04h 23min
      JT2
-
+     CCAP 07h 12min -- on May 186
 ******
 Issues with JT2_trimmed.fasta -- multiple reads with the same name
 count # of reads
