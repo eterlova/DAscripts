@@ -15,14 +15,14 @@ library(IPO)
 # 1.1 save path of each sample in a vector
 #"sample_502" #does not exist
 samples <- c("sample_013", "sample_026")
-#samples <- c("sample_013", "sample_026", "sample_056", "sample_063", "sample_110", "sample_111", "sample_127",
+samples <- c("sample_013", "sample_026", "sample_056", "sample_063", "sample_110", "sample_111", "sample_127",
              "sample_128", "sample_133", "sample_137", "sample_157", "sample_166", "sample_169", "sample_174",
              "sample_176", "sample_190", "sample_193", "sample_216", "sample_217", "sample_224", "sample_245",
              "sample_260", "sample_267", "sample_281", "sample_304", "sample_311", "sample_324", "sample_358",
              "sample_360", "sample_361", "sample_366", "sample_375", "sample_387", "sample_389", "sample_400",
              "sample_412", "sample_417", "sample_432", "sample_444", "sample_452", "sample_457", "sample_464",
-             "sample_469", "sample_485", "sample_518", "sample_532", "sample_577", "sample_582",
-             "sample_583", "sample_588", "sample_590", "sample_602", "sample_609", "sample_615")
+             "sample_469", "sample_485", "sample_518", "sample_532", "sample_577", "sample_582", "sample_583",
+             "sample_588", "sample_590", "sample_602", "sample_609", "sample_615")
   
 rawfiles <- vector()  
 
@@ -35,6 +35,9 @@ for(i in samples){
 
 #rawfiles
 
+pooled <- dir(path="D:/DA_metabolomics_mzML", pattern="pulled", full.names = TRUE,
+              recursive = TRUE)
+
 # 1.2 read in phenotypes
 
 phenotypes <- read.table("C:/Users/LisaTerlova/Documents/DAmetabolomics/ZA17_JT2_CCAP_alpha/ZA17_JT2_CCAP_alpha_phenotypes.csv",
@@ -45,15 +48,15 @@ phenotypes <- read.table("C:/Users/LisaTerlova/Documents/DAmetabolomics/ZA17_JT2
 
 raw_data <- readMSData(files = rawfiles, pdata = new("NAnnotatedDataFrame", phenotypes),
                        mode = "onDisk")
-raw_data_test <- filterRt(raw_data, c(250, 350))
+#raw_data_test <- filterRt(raw_data, c(250, 350))
 
 # 3. initial data inspection
-#group_colors <- paste0(brewer.pal(3, "Set1"), "60")
-#names(group_colors) <- c("ZA1-7", "CCAP 276/35", "JT2-VF29")
+group_colors <- paste0(brewer.pal(3, "Set1"), "60")
+names(group_colors) <- c("ZA1-7", "CCAP 276/35", "JT2-VF29")
 
 # Get the base peak chromatograms
-#bpis <- chromatogram(raw_data_test, aggregationFun="max")# base peak chromatograms (BPC)
-#plot(bpis, col = group_colors[raw_data_test$Strain])
+bpis <- chromatogram(raw_data_test, aggregationFun="max")# base peak chromatograms (BPC)
+plot(bpis, col = group_colors[raw_data_test$Strain])
 
 # Get the total ion current by file
 #tc <- split(tic(raw_data_test), f = fromFile(raw_data_test))
@@ -61,10 +64,10 @@ raw_data_test <- filterRt(raw_data, c(250, 350))
 #        ylab = "intensity", main = "Total ion current")
 
 # 4. chromatographic peak detection
-# 4.1 parameter optimization with IPO package)
+# 4.1 parameter optimization with IPO package
 # QC samples should suffice for parameter optimization (polled samples?)
 
-# peak detection with matchedFilter
+# peak detection with matchedFilter parameter optimization
 #peakpickingParameters_matchedFilter <- getDefaultXcmsSetStartingParams('matchedFilter')
 #setting levels for step to 0.2 and 0.3 (hence 0.25 is the center point)
 #peakpickingParameters$step <- c(0.2, 0.3)
@@ -91,6 +94,7 @@ raw_data_test <- filterRt(raw_data, c(250, 350))
 #mzdiff: 0.2232
 #index: FALSE
 
+
 # peak detection with centWave
 peakpickingParameters_centWave <- getDefaultXcmsSetStartingParams('centWave')
 peakpickingParameters_centWave$min_peakwidth <- c(5,14)
@@ -100,20 +104,51 @@ peakpickingParameters_centWave$value_of_prefilter <- c(200,300)
 
 time.xcmsSet <- system.time({ # measuring time
   resultPeakpicking_centWave <- 
-    optimizeXcmsSet(files = rawfiles, #insert list of polled files instead
+    optimizeXcmsSet(files = pooled,
                     params = peakpickingParameters_centWave, 
-                    nSlaves = 1, 
+                    nSlaves = 4, 
                     subdir = NULL,
                     plot = FALSE)
 })
 
-# the same with fitgauss=TRUE
-time.xcmsSet <- system.time({ # measuring time
-  resultPeakpicking_centWave <- 
-    optimizeXcmsSet(files = rawfiles, #insert list of polled files instead
-                    params = peakpickingParameters_centWave, 
-                    nSlaves = 1, 
-                    subdir = NULL,
-                    plot = FALSE,
-                    fitgauss=TRUE)
-})
+# best parameter settings:
+# min_peakwidth: 9.5
+# max_peakwidth: 35
+# ppm: 32
+# mzdiff: -0.001
+# prefilter: 2
+# value_of_prefilter: 200
+# snthresh: 10
+# noise: 0
+# mzCenterFun: wMean
+# integrate: 1
+# fitgauss: FALSE
+# verbose.columns: FALSE
+
+
+# 4.2 centroiding data (required by CentWave algorithm)
+# verify smoothing options!!!
+# Biochanin m/z 285.0767 rt 5.30695
+# Lidocaine m/z 235.1811 rt 3.15795
+
+raw_data_test_cent <- raw_data_test %>% smooth(method = "SavitzkyGolay", halfWindowSize = 4L) %>% pickPeaks()
+bpis_cent <- chromatogram(raw_data_test_cent, aggregationFun="max")# base peak chromatograms (BPC)
+plot(bpis_cent, col = group_colors[raw_data_test_cent$Strain])
+
+# 4.3 chromatographic peak detection
+xchr <- findChromPeaks(raw_data_test_cent, param = CentWaveParam(ppm = 32,
+                                                                 peakwidth = c(9.5, 35),
+                                                                 mzdiff = -0.001,
+                                                                 prefilter = c(2, 200),
+                                                                 snthresh = 10,
+                                                                 noise = 0,
+                                                                 mzCenterFun = "wMean",
+                                                                 integrate = 1,
+                                                                 fitgauss = FALSE,
+                                                                 extendLengthMSW = FALSE))
+head(chromPeaks(xchr))
+chromPeakData(xchr)
+
+# 4.4 refine detected peaks # de  before or after filtering?
+
+
