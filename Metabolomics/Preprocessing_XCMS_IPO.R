@@ -1,7 +1,7 @@
-#if (!requireNamespace("BiocManager", quietly=TRUE))
-#  install.packages("BiocManager")
-#BiocManager::install("IPO")
-#install.packages("xcms", "RColorBrewer", "pander", "magrittr", "pheatmap", "SummarizedExperiment")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+  install.packages("BiocManager")
+BiocManager::install("IPO")
+install.packages("xcms", "RColorBrewer", "pander", "magrittr", "pheatmap", "SummarizedExperiment", "data.table")
 
 library(xcms)
 library(RColorBrewer)
@@ -10,11 +10,12 @@ library(magrittr)
 library(pheatmap)
 library(SummarizedExperiment)
 library(IPO)
+library(data.table)
 #NB use normal slash (/) for file paths despite what Windows does
 
 # 1.1 save path of each sample in a vector
 #"sample_502" #does not exist
-samples <- c("sample_013", "sample_026")
+#samples <- c("sample_013", "sample_026")
 samples <- c("sample_013", "sample_026", "sample_056", "sample_063", "sample_110", "sample_111", "sample_127",
              "sample_128", "sample_133", "sample_137", "sample_157", "sample_166", "sample_169", "sample_174",
              "sample_176", "sample_190", "sample_193", "sample_216", "sample_217", "sample_224", "sample_245",
@@ -27,16 +28,19 @@ samples <- c("sample_013", "sample_026", "sample_056", "sample_063", "sample_110
 rawfiles <- vector()  
 
 for(i in samples){
-  add <- dir(path="D:/DA_metabolomics_mzML", pattern=i, full.names = TRUE,
+  add <- dir(path="~/2021DA_metabolomes/ZA17_JT2_CCAP_alpha_data/Data", pattern=i, full.names = TRUE,
              recursive = TRUE)
   rawfiles[[length(rawfiles)+1]] <- add
 }
+rawfiles
+fwrite(list(rawfiles), file = "sample_paths.txt")
 
-
-#rawfiles
-
-pooled <- dir(path="D:/DA_metabolomics_mzML", pattern="pulled", full.names = TRUE,
+pooled <- dir(path="~/2021DA_metabolomes/ZA17_JT2_CCAP_alpha_data/Data", pattern="pulled", full.names = TRUE,
               recursive = TRUE)
+fwrite(list(pooled), file = "pooled_paths.txt")
+
+blanks <- dir(path="~/2021DA_metabolomes/ZA17_JT2_CCAP_alpha_data/Data", pattern="MeOH")
+fwrite(list(blanks), file = "blanks_paths.txt")
 
 # 1.2 read in phenotypes
 
