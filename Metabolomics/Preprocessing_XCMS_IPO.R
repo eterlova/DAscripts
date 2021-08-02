@@ -125,19 +125,19 @@ time.xcmsSet <- system.time({ # measuring time
                     plot = FALSE)
 })
 
-# best parameter settings:
-# min_peakwidth: 9.5
-# max_peakwidth: 35
-# ppm: 32
-# mzdiff: -0.001
-# prefilter: 2
-# value_of_prefilter: 200
-# snthresh: 10
-# noise: 0
-# mzCenterFun: wMean
-# integrate: 1
-# fitgauss: FALSE
-# verbose.columns: FALSE
+#best parameter settings:
+#min_peakwidth: 11.75
+#max_peakwidth: 32.9
+#ppm: 32
+#mzdiff: -0.001
+#prefilter: 2
+#value_of_prefilter: 200
+#snthresh: 10
+#noise: 0
+#mzCenterFun: wMean
+#integrate: 1
+#fitgauss: FALSE
+#verbose.columns: FALSE
 
 
 # 4.2 centroiding data (required by CentWave algorithm)
