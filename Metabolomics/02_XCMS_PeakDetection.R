@@ -52,10 +52,10 @@ blanks_files <- dir(path="~/2021DA_metabolomes/ZA17_JT2_CCAP_alpha_data/Data", p
 ##phenotypes <- read.table("~/2021DA_metabolomes/ZA17_JT2_CCAP_alpha_data/ZA17_JT2_CCAP_alpha_phenotypes.csv",
 ##                       header=TRUE,
 ##                       sep=",")
-##pooled_phenotypes <- read.table("~/eterlova/2021DA_metabolomes/ZA17_JT2_CCAP_alpha_data/pooled_phenotypes.csv",
+##pooled_phenotypes <- read.table("~/2021DA_metabolomes/ZA17_JT2_CCAP_alpha_data/pooled_phenotypes.csv",
 ##                    header=TRUE,
 ##                       sep=",")
-blanks_phenotypes <- read.table("~/eterlova/2021DA_metabolomes/ZA17_JT2_CCAP_alpha_data/blanks_phenotypes.csv",
+blanks_phenotypes <- read.table("~/2021DA_metabolomes/ZA17_JT2_CCAP_alpha_data/blanks_phenotypes.csv",
                     header=TRUE,
                        sep=",")
 
