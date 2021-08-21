@@ -157,4 +157,55 @@ pdf("Blanks_PeaksFromEIC.pdf")
 plot <- plot(xchr_blank)
 dev.off() 
 
+## 5. Peak detection on full data (as opposed to EIC)
+xdata_blank <- findChromPeaks(blanks_cent, param = CentWaveParam(ppm = 32,
+                                                                 peakwidth = c(11.75, 32.9),
+                                                                 mzdiff = -0.001,
+                                                                 prefilter = c(2, 200),
+                                                                 snthresh = 10,
+                                                                 noise = 1000, #note that this is different from IPO output, estimated from Blanks_PeaksFromEIC.pdf 
+                                                                 mzCenterFun = "wMean",
+                                                                 integrate = 1,
+                                                                 fitgauss = FALSE,
+                                                                 extendLengthMSW = FALSE))
+
+## ChromPeaks(xdata_blank) is a matrix
+#head(chromPeaks(xdata_blank))
+#write.csv(chromPeaks(xdata_blank), "~/2021DA_metabolomes/02_PeakDetection/Blanks_Peaks_xdata", row.names=TRUE)
+#write.csv(chromPeakData(xdata_blank), "~/2021DA_metabolomes/02_PeakDetection/Blanks_PeakData_xdata", row.names=TRUE)
+
+## 5.1 Refinment of detected peaks
+## post-process the peak detection results merging peaks overlapping in a 2 second window per file if the signal between in between them is lower than 75% of the smaller peak’s maximal intensity.
+mpp <- MergeNeighboringPeaksParam(expandRt = 2)
+xdata_blank_pp <- refineChromPeaks(xdata_blank, mpp)
+
+write.csv(chromPeaks(xdata_blank_pp), "~/2021DA_metabolomes/02_PeakDetection/Blanks_Peaks_xdata_pp", row.names=TRUE)
+write.csv(chromPeakData(xdata_blank_pp), "~/2021DA_metabolomes/02_PeakDetection/Blanks_PeakData_xdata_pp", row.names=TRUE)
+
+pdf("Blanks_PeaksDetected.pdf") 
+plot <- plot(xdata_blank)
+dev.off() 
+
+pdf("Blanks_PeaksDetected_and_merged.pdf") 
+plot <- plot(xdata_blank_pp)
+dev.off()
+
+## 5.2. Summary statistics on identified chromatographic peaks. Shown are number of identified peaks per sample and widths/duration of chromatographic peaks.
+
+summary_fun <- function(z)
+    c(peak_count = nrow(z), rt = quantile(z[, "rtmax"] - z[, "rtmin"]))
+
+T <- lapply(split.data.frame(
+    chromPeaks(xdata_blank_pp), f = chromPeaks(xdata_blank_ppd)[, "sample"]), # incert the right data here
+    FUN = summary_fun)
+T <- do.call(rbind, T)
+rownames(T) <- basename(fileNames(xdata_blank_pp))
+pandoc.table(
+    T,
+    caption = paste0("Summary statistics on identified chromatographic",
+                     " peaks. Shown are number of identified peaks per",
+                     " sample and widths/duration of chromatographic ",
+                     "peaks."))
+write.csv(chromPeaks(T), "~/2021DA_metabolomes/02_PeakDetection/Summary_BlankPeaks_xdata_blank_pp", row.names=TRUE)
+
 
