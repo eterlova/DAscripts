@@ -1,7 +1,12 @@
 ## This script performs PEak-picking of individual data files in independent R sessions (PeakDetection1.sh)
 args = commandArgs(trailingOnly=TRUE)
 library(xcms)
+library(RColorBrewer)
+library(pander)
+library(magrittr)
+library(pheatmap)
 library(SummarizedExperiment)
+library(data.table)
 
 ## File list
 file_list <- paste0(args[1])
