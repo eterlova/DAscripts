@@ -24,7 +24,7 @@ rawdata <- readMSData(file, mode = "onDisk")
 
 ## Centroid data
 ## smoothing data in the m/z dimention using Savitzky-Golay filter with a half-window size of 4
-rawdata_sg <- f %>%
+rawdata_sg <- rawdata %>%
     smooth(method = "SavitzkyGolay", halfWindowSize = 4L)
 #pooled_sg <- pooled %>%
 #    smooth(method = "SavitzkyGolay", halfWindowSize = 4L)
