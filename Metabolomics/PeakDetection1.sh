@@ -29,4 +29,4 @@ Rscript --no-save --no-restore --verbose 02.1_PeakDetection.R \
 > "outfile_"$SLURM_JOB_ID".Rout" 2>&1 > "$SLURM_JOB_ID".log
 
 cat *.log > all.log 
-
+rm "$SLURM_JOB_ID".log
