@@ -172,3 +172,40 @@ print("time for optimizing peak picking parameters")
 time.xcmsSet
 print("time for optimizing retention time correction and grouping parameters")
 time.RetGroup
+
+## Best parameters
+xset <- xcmsSet( 
+  method = "centWave",
+  peakwidth       = c(11.75, 32.9),
+  ppm             = 32,
+  noise           = 0,
+  snthresh        = 10,
+  mzdiff          = -0.001,
+  prefilter       = c(2, 200),
+  mzCenterFun     = "wMean",
+  integrate       = 1,
+  fitgauss        = FALSE,
+  verbose.columns = FALSE)
+xset <- retcor( 
+  xset,
+  method         = "obiwarp",
+  plottype       = "none",
+  distFunc       = "cor_opt",
+  profStep       = 1,
+  center         = 1,
+  response       = 1,
+  gapInit        = 0.2112,
+  gapExtend      = 2.7,
+  factorDiag     = 2,
+  factorGap      = 1,
+  localAlignment = 0)
+xset <- group( 
+  xset,
+  method  = "density",
+  bw      = 0.25,
+  mzwid   = 1e-04,
+  minfrac = 1,
+  minsamp = 1,
+  max     = 50)
+
+xset <- fillPeaks(xset)
