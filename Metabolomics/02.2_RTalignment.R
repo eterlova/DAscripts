@@ -1,9 +1,10 @@
 library(data.table)
 library(pander)
 library(magrittr)
-library(pheatmap)
 library(SummarizedExperiment)
 labrary(xcms)
+
+args = commandArgs(trailingOnly=TRUE)
 
 ## Input dir
 input_dir <- paste0(args[1])
