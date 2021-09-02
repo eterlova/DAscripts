@@ -8,7 +8,7 @@ args = commandArgs(trailingOnly=TRUE)
 
 ## Input dir
 input_dir <- paste0(args[1])
-
+#input_dir <- "~/2021DA_metabolomes/02_PeakDetection_wconda"
 ## Output dir
 output_dir <- paste0(args[2])
 
