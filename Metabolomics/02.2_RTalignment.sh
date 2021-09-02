@@ -20,7 +20,7 @@ conda activate Rmetab
 
 Rscript --no-save --no-restore --verbose 02.2_PeakDetection.R \
 "input_dir" "out_dir" "$SLURM_ARRAY_TASK_ID" \
-> "outfile_"$SLURM_JOB_ID".Rout" 2>&1 > "$SLURM_JOB_ID".log
+> "outfile_RTalignment_"$SLURM_JOB_ID".Rout" 2>&1 > "$SLURM_JOB_ID".log
 
-cat *.log > all.log 
+cat *.log > RTalignment.log 
 rm "$SLURM_JOB_ID".log
