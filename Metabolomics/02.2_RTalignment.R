@@ -2,7 +2,7 @@ library(data.table)
 library(pander)
 library(magrittr)
 library(SummarizedExperiment)
-labrary(xcms)
+library(xcms)
 
 args = commandArgs(trailingOnly=TRUE)
 
