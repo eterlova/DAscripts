@@ -3,7 +3,7 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH -c 1
-#SBATCH --mem=16G
+#SBATCH --mem=40G
 #SBATCH --partition=general
 #SBATCH --qos=general
 #SBATCH --array=[0-52] ## put here how many files you have
