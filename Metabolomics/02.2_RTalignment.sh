@@ -18,7 +18,7 @@ output_dir="$input_dir"
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate Rmetab
 
-Rscript --no-save --no-restore --verbose 02.2_PeakDetection.R \
+Rscript --no-save --no-restore --verbose 02.2_RTalignment.R \
 "input_dir" "out_dir" "$SLURM_ARRAY_TASK_ID" \
 > "outfile_RTalignment_"$SLURM_JOB_ID".Rout" 2>&1 > "$SLURM_JOB_ID".log
 
