@@ -50,7 +50,7 @@ Main metrics from Nanoplot:
 
 | Feature | *T. adustus* | *T. bajacalifornicus* | *T. "raciborskii"* | 
 | :------: | :------: |  :------: |  :------: |
-| :------: | **JT2-VF29** |  **ZA 1-7** |  **CCAP 276/35** |
+|  | **JT2-VF29** |  **ZA 1-7** |  **CCAP 276/35** |
 | Mean read length | 6,083.5 |  9,954.0 |  :------: |
 | Mean read quality | 12.1 |  11.9 |  :------: |
 | Median read length | 2,699.0 |  7,900.0 |  :------: |
@@ -58,3 +58,45 @@ Main metrics from Nanoplot:
 | Number of reads | 4,843,950.0 |  1,746,873.0 |  :------: |
 | Read length N50 | 12,769.0 |  17,894.0 |  :------: |
 | Total bases | 29,468,000,848.0 |  17,388,312,276.0 |  :------: |
+
+### Contaminant Screening
+To filter out bacterial and fungal contaminants we ran Centrifuge. We ran centrifuge two times with varying hit lengths (30 and 50 bp). Here is the script we used 'centrifuge.sh':
+
+<pre style="color: silver; background: black;">
+#!/bin/bash
+#SBATCH --job-name=centrifuge
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 18
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --array=[0-2]
+#SBATCH --mail-type=END
+#SBATCH --mem=40G
+#SBATCH --mail-user=elizaveta.terlova@uconn.edu
+#SBATCH -o %x_%j.out
+#SBATCH -e %x_%j.err
+
+data
+
+module load centrifuge/1.0.4-beta
+
+workingdir=~/2021DA_genomes
+indexdir=/projects/EBP/Wegrzyn/Moss/ppyriforme/initial_analysis/centrifuge_14813/centrifuge_analysis/1_index/
+
+LIST=($(echo JT2 ZA17 CCAP))
+SAM=${LIST[$SLURM_ARRAY_TASK_ID]}
+
+centrifuge --un $workingdir/02_Centrifuge/${SAM}_50_abv_fungi_unclassified_reads_from_centrifuge\
+ --mm\
+ --min-hitlen 50\
+ --report-file $workingdir/02_Centrifuge/${SAM}_50_abv_fungi_unclassified_reads_from_centrifuge/${SAM}_centrifuge_abvf_50.tsv\
+ -p 12\
+ -x $indexdir/abv/index/abv\
+ -x $indexdir/fungi/fungi\
+ -U $workingdir/02_Centrifuge/${SAM}_all.fastq
+ data</pre>
+ 
+
+
+
