@@ -195,7 +195,7 @@ Centrifuge results (evaluated with Nanoplot):
   </tr>
   <tr>
     <td>Genome coverage </td>
-    <td>12.2X</td>
+    <td>122X</td>
     <td></td>
     <td>3.86X</td>
     <td></td>
