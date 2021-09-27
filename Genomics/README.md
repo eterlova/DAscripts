@@ -13,7 +13,7 @@ data 01_QC 02_Centrifuge 03_Porechop 04_Assembly 05_AssemblyEvaluation 06_Error_
 
 <br>
 ## 1. Quality Report
-We use nanoplot a tool developed to evaluate the statistics of long read data of Oxford Nanopore Technologies and Pacific Biosciences. The summary of the data can be found here: [01_QC_Analysis](https:// /Nanoplot_beforeCentrifuge.pdf)
+We use nanoplot a tool developed to evaluate the statistics of long read data of Oxford Nanopore Technologies and Pacific Biosciences. The summary of the data can be found here: [QC Analysis before processing](https://github.com/eterlova/DAscripts/tree/main/Genomics/01_QC/Nanoplot_beforeProcessing.pdf)
 <pre style="color: silver; background: black;">
 #!/bin/bash
 #SBATCH --job-name=nanoplot_JT2
