@@ -106,19 +106,20 @@ centrifuge --un $workingdir/02_Centrifuge/${SAM}_50_abv_fungi_unclassified_reads
  -U $workingdir/02_Centrifuge/${SAM}_all.fastq
  data</pre>
  
-Centrifuge results:
+Centrifuge results (evaluated with Nanoplot):
 
 <table>
   <tr>
     <td></td>
-    <td colspan="2">*T. adustus*</td>
-    <td colspan="2">*T. bajacalifornicus*</td>
-    <td colspan="2">*T. "raciborskii"*</td>
+    <td colspan="2"><i>T. adustus</i></td>
+    <td colspan="2"><i>T. bajacalifornicus</i></td>
+    <td colspan="2"><i>T. "raciborskii"</i></td>
   </tr>
   <tr>
-    <td colspan="2">**JT2-VF29**</td>
-    <td colspan="2">**ZA 1-7**</td>
-    <td colspan="2">**CCAP 276/35**</td>
+    <td></td>
+    <td colspan="2"><b> JT2-VF29</b></td>
+    <td colspan="2"> <b> ZA 1-7 </b></td>
+    <td colspan="2"><b> CCAP 276/35</b></td>
   </tr>
   <tr>
     <td> </td>
@@ -128,10 +129,70 @@ Centrifuge results:
     <td> 50 pb </td>
     <td> 30 bp </td>
     <td> 50 bp </td>     
-    <td colspan="2">Three</td>
+  </tr>
+  <tr>
+    <td>Mean read length</td>
+    <td>4,667.3</td>
+    <td></td>
+    <td>5,634.7</td>
+    <td></td>
+    <td>1,229.9</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Mean read quality</td>
+    <td>12.1</td>
+    <td></td>
+    <td>11.9</td>
+    <td></td>
+    <td>12.2</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Median read length</td>
+    <td>1,382.0</td>
+    <td></td>
+    <td>1,760.0</td>
+    <td></td>
+    <td>551.0</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Median read quality</td>
+    <td>12.3</td>
+    <td></td>
+    <td>12.1</td>
+    <td></td>
+    <td>12.3</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Number of reads</td>
+    <td>3,932,242.0</td>
+    <td></td>
+    <td>1,027,612.0</td>
+    <td></td>
+    <td>9,597,728.0</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Read length N50</td>
+    <td>11,583.0</td>
+    <td></td>
+    <td>13,790.0</td>
+    <td></td>
+    <td>2,339.0</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Total bases</td>
+    <td>18,352,972,188.0</td>
+    <td></td>
+    <td>5,790,296,574.0</td>
+    <td></td>
+    <td>11,804,110,380.0</td>
+    <td></td>
   </tr>
 </table>
  
-
-
-
+ 
