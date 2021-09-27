@@ -59,6 +59,15 @@ Main metrics from Nanoplot:
 | Read length N50 | 12,769.0 |  17,894.0 |  :------: |
 | Total bases | 29,468,000,848.0 |  17,388,312,276.0 |  :------: |
 
+Coverage estimates (Our goal is 40x):
+
+|  | *T. adustus* | *T. bajacalifornicus* | *T. "raciborskii"* | 
+| :------: | :------: |  :------: |  :------: |
+|  | **JT2-VF29** |  **ZA 1-7** |  **CCAP 276/35** |
+| Total bases | 29,468,000,848.0 |  17,388,312,276.0 |  :------: |
+| Genome size | 1,5e+8 |  1,5e+8 |  1,5e+8 |
+| Initial coverage | 19.64 |  11.59 |  :------: |
+
 ### Contaminant Screening
 To filter out bacterial and fungal contaminants we ran Centrifuge. We ran centrifuge two times with varying hit lengths (30 and 50 bp). Here is the script we used 'centrifuge.sh':
 
@@ -96,6 +105,32 @@ centrifuge --un $workingdir/02_Centrifuge/${SAM}_50_abv_fungi_unclassified_reads
  -x $indexdir/fungi/fungi\
  -U $workingdir/02_Centrifuge/${SAM}_all.fastq
  data</pre>
+ 
+Centrifuge results:
+
+<table>
+  <tr>
+    <td></td>
+    <td colspan="2">*T. adustus*</td>
+    <td colspan="2">*T. bajacalifornicus*</td>
+    <td colspan="2">*T. "raciborskii"*</td>
+  </tr>
+  <tr>
+    <td colspan="2">**JT2-VF29**</td>
+    <td colspan="2">**ZA 1-7**</td>
+    <td colspan="2">**CCAP 276/35**</td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td> 30 bp </td>
+    <td> 50 bp</td>
+    <td> 30 bp </td>
+    <td> 50 pb </td>
+    <td> 30 bp </td>
+    <td> 50 bp </td>     
+    <td colspan="2">Three</td>
+  </tr>
+</table>
  
 
 
