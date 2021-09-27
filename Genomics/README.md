@@ -66,7 +66,7 @@ Coverage estimates (Our goal is 40x):
 |  | **JT2-VF29** |  **ZA 1-7** |  **CCAP 276/35** |
 | Total bases | 29,468,000,848.0 |  17,388,312,276.0 |  :------: |
 | Genome size | 1,5e+8 |  1,5e+8 |  1,5e+8 |
-| Initial coverage | 196.4X |  115.9X |  :------: |
+| Initial coverage | 19.64X |  11.59X |  :------: |
 
 ### Contaminant Screening
 To filter out bacterial and fungal contaminants we ran Centrifuge. We ran centrifuge two times with varying hit lengths (30 and 50 bp). Here is the script we used 'centrifuge.sh':
