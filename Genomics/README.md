@@ -48,7 +48,8 @@ module list</pre>
 
 Main metrics from Nanoplot:
 
-| Feature | *T. adustus* JT2-VF29 | *T. bajacalifornicus* ZA 1-7| *T. "raciborskii"* CCAP| 
+| Feature | *T. adustus* | *T. bajacalifornicus* | *T. "raciborskii"* | 
+| :------: | JT2-VF29 |  ZA 1-7 |  CCAP 276/35 |
 | :------: | :------: |  :------: |  :------: |
 | Mean read length | 6,083.5 |  9,954.0 |  :------: |
 | Mean read quality | 12.1 |  11.9 |  :------: |
