@@ -1,7 +1,7 @@
 ## Comparing genome sequence of desert  and aquatic  algal species
 
 ## Introduction
-*Tetradesmus bajacalifornicus* (ZA1-7) and *T. adustus* (JT2-VF29) are closely related desert species, *T. "raciborskii"* (CCAP 5.92) is an aquatic species sister to both of them.
+*Tetradesmus bajacalifornicus* (ZA1-7) and *T. adustus* (JT2-VF29) are closely related desert species, *T. "raciborskii"* (CCAP 276/35) is an aquatic species sister to both of them.
 <br>
 ### Directory layout
 The data used in this project can be accessed in the Xanadu cluster at the following directory: 'LLewis_lab'
