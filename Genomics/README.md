@@ -46,35 +46,14 @@ NanoPlot --fastq /home/CAM/eterlova/2021DA_genomes/data/JT2_all.fastq \
 date
 module list</pre>
 
-Output are the html files containing the following stats:
+Main metrics from Nanoplot:
 
 | Feature | *T. adustus* | *T. bajacalifornicus* | *T. "raciborskii"* | 
 | :------: | :------: |  :------: |  :------: |
-| 
-eature
-General summary
-Mean read length 6,083.5
-Mean read quality 12.1
-Median read length 2,699.0
-Median read quality 12.4
-Number of reads 4,843,950.0
-Read length N50 12,769.0
-Total bases 29,468,000,848.0
-Number, percentage and megabases of reads above quality cutoffs
->Q5 4843950 (100.0%) 29468.0Mb
->Q7 4843950 (100.0%) 29468.0Mb
->Q10 3969870 (82.0%) 24405.3Mb
->Q12 2716358 (56.1%) 17425.9Mb
->Q15 332810 (6.9%) 1766.1Mb
-Top 5 highest mean basecall quality scores and their read lengths
-1 22.3 (505)
-2 22.3 (505)
-3 22.1 (225)
-4 22.1 (225)
-5 21.9 (234)
-Top 5 longest reads and their mean basecall quality score
-1 344457 (9.3)
-2 344457 (9.3)
-3 168487 (7.3)
-4 168487 (7.3)
-5 126122 (7.4)
+| Mean read length | 6,083.5 |  9,954.0 |  :------: |
+| Mean read quality | 12.1 |  11.9 |  :------: |
+| Median read length | 2,699.0 |  7,900.0 |  :------: |
+| Median read quality | 12.4 |  12.2 |  :------: |
+| Number of reads | 4,843,950.0 |  1,746,873.0 |  :------: |
+| Read length N50 | 12,769.0 |  17,894.0 |  :------: |
+| Total bases | 29,468,000,848.0 |  17,388,312,276.0 |  :------: |
