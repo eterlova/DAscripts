@@ -269,3 +269,60 @@ shasta --input ../../03_Porechop/${SAM}_trimmed.fasta \
         --assemblyDirectory /home/CAM/eterlova/2021DA_genomes/04_Assembly/Shasta/${SAM}
 date</pre>
 
+Assembly is saved in a file Assembly.fasta
+
+### Flye assembly and polish
+We usee flye assembly with 6 polishing iterations (number of iteration was chosen from several options using Busco scores). The script 'flye.sh':
+<pre style="color: silver; background: black;">#!/bin/bash
+#SBATCH --job-name=JT2_flye6
+#SBATCH -n 1
+#SBATCH -N 1
+#SBATCH -c 32
+#SBATCH --mem=600G
+#SBATCH --partition=himem2
+#SBATCH --qos=himem
+#SBATCH --array=[0-2]
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=elizaveta.terlova@uconn.edu
+#SBATCH -o %x_%j.out
+#SBATCH -e %x_%j.err
+
+LIST=($(echo JT2 ZA17 CCAP))
+SAM=${LIST[$SLURM_ARRAY_TASK_ID]}
+
+module load flye/2.4.2
+
+flye --nano-raw ../../03_Porechop/${SAM}_trimmed.fasta \
+        --genome-size 150m \
+        --threads 32 \
+        --iterations 6 \
+        --out-dir /home/CAM/eterlova/2021DA_genomes/04_Assembly/Flye/${SAM}_flye_polish6
+</pre>
+
+Assembly is saved in a file assembly.fasta
+
+### Canu assembly
+Canu takes much longer to finish than the other two assemblers. Note: the email signaling the finish of a job comes much earlier than the job is actually over. Monitor the active jobs on the cluster using the command <pre style="color: silver; background: black;">squeue job# </pre>
+The script used for Canu assembly:
+<pre style="color: silver; background: black;">#!/bin/bash
+#SBATCH --job-name=JT2_canu
+#SBATCH -n 1
+#SBATCH -N 1
+#SBATCH -c 24
+#SBATCH --mem=600G
+#SBATCH --partition=himem2
+#SBATCH --qos=himem
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=elizaveta.terlova@uconn.edu
+#SBATCH -o %x_%j.out
+#SBATCH -e %x_%j.err
+
+module load gnuplot/5.2.2
+module load canu/2.1.1
+
+canu useGrid=true \
+        -p JT2 -d JT2 \
+        genomeSize=150M \
+        -nanopore ../../03_Porechop/JT2_trimmed.fasta gridOptions="--partition=himem2 --qos=himem  --mem-per-cpu=24G --cpus-per-task=24"</pre>
+
+
