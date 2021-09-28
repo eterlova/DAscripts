@@ -232,6 +232,40 @@ Command options:
                [-t THREADS] </pre>
 
 ## 2. Assembly
-In this step we uses three asseblers Canu, Flye, and Shasta on the filtered and trimmed reads
+In this step we uses three asseblers Canu, Flye, and Shasta on the filtered and trimmed reads.
 
+### Shasta assembly
+The most rapid assembler. The script, which we used 'shasta.sh':
+<pre style="color: silver; background: black;">#!/bin/bash
+#SBATCH --job-name=JT2_shasta
+#SBATCH -n 1
+#SBATCH -N 1
+#SBATCH -c 32
+#SBATCH --mem=500G
+#SBATCH --partition=himem2
+#SBATCH --array=[0-2]
+#SBATCH --qos=himem
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=elizaveta.terlova@uconn.edu
+#SBATCH -o %x_%A.out
+#SBATCH -e %x_%A.err
+
+hostname
+date
+
+LIST=($(echo JT2 ZA17 CCAP))
+SAM=${LIST[$SLURM_ARRAY_TASK_ID]}
+
+##########################################################
+##              shasta Assembly                         ##
+##########################################################
+
+module load shasta/0.5.1
+
+shasta --input ../../03_Porechop/${SAM}_trimmed.fasta \
+        --Reads.minReadLength 1000 \
+        --memoryMode anonymous \
+        --threads 32  \
+        --assemblyDirectory /home/CAM/eterlova/2021DA_genomes/04_Assembly/Shasta/
+date</pre>
 
