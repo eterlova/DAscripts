@@ -266,6 +266,6 @@ shasta --input ../../03_Porechop/${SAM}_trimmed.fasta \
         --Reads.minReadLength 1000 \
         --memoryMode anonymous \
         --threads 32  \
-        --assemblyDirectory /home/CAM/eterlova/2021DA_genomes/04_Assembly/Shasta/
+        --assemblyDirectory /home/CAM/eterlova/2021DA_genomes/04_Assembly/Shasta/${SAM}
 date</pre>
 
