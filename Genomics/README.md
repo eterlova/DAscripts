@@ -237,6 +237,4 @@ Command options:
 ## 2. Assembly
 In this step we uses three asseblers Canu, Flye, and Shasta on the filtered and trimmed reads
 
-<br>
-## 2. Assembly
-In this step we uses three asseblers Canu, Flye, and Shasta on the filtered and trimmed reads
+
