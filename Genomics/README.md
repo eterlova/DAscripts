@@ -231,7 +231,6 @@ Command options:
 [--format {auto,fasta,fastq,fasta.gz,fastq.gz}] [-v VERBOSITY]
                [-t THREADS] </pre>
 
-<br>
 ## 2. Assembly
 In this step we uses three asseblers Canu, Flye, and Shasta on the filtered and trimmed reads
 
