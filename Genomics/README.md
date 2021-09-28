@@ -222,7 +222,10 @@ To remove adapters, I ran Porechop on unclassified Centrifuge reads using the fo
 
 module load porechop
 
-porechop -i /home/CAM/eterlova/2021DA_genomes/02_Centrifuge/JT2_abv_fungi_unclassified_reads_from_centrifuge.fastq -o JT2_trimmed.fastq -v 3 -t 40</pre>
+porechop -i /home/CAM/eterlova/2021DA_genomes/02_Centrifuge/JT2_abv_fungi_unclassified_reads_from_centrifuge.fastq \
+         -o JT2_trimmed.fastq \
+         -v 3 \
+         -t 40</pre>
 
 Command options:
 <pre style="color: silver; background: black;">porechop -i INPUT 
