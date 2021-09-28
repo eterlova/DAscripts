@@ -234,5 +234,5 @@ Command options:
                [-t THREADS] </pre>
 
 <br>
-## Assembly
+## 2. Assembly
 In this step we uses three asseblers Canu, Flye, and Shasta on the filtered and trimmed reads
