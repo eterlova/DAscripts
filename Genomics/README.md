@@ -231,4 +231,8 @@ Command options:
 <pre style="color: silver; background: black;">porechop -i INPUT 
 [-o OUTPUT]
 [--format {auto,fasta,fastq,fasta.gz,fastq.gz}] [-v VERBOSITY]
-               [-t THREADS] 
+               [-t THREADS] </pre>
+
+<br>
+## Assembly
+In this step we uses three asseblers Canu, Flye, and Shasta on the filtered and trimmed reads
