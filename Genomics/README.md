@@ -362,6 +362,7 @@ export AUGUSTUS_CONFIG_PATH=./augustus_config
 busco -i /home/CAM/eterlova/2021DA_genomes/04_Assembly/Flye/JT2_flye_polish6/assembly.fasta \
         -o JT2_busco_flye6_chlorophyta -l ./chlorophyta_odb10 -m genome</pre>
         
+BUSCO results for the initial assembly:
 <table>
   <tr>
     <td></td>
@@ -446,4 +447,33 @@ busco -i /home/CAM/eterlova/2021DA_genomes/04_Assembly/Flye/JT2_flye_polish6/ass
     <td colspan="9">1519</td>
   </tr>
 </table>
+
+### QUAST
+This method of assembly evaluation gives you values on length-related metrics. The script to use Quast on Flye assembly:
+<pre style="color: silver; background: black;">
+#!/bin/bash
+#SBATCH --job-name=JT2_quast_flye_polish
+#SBATCH -n 1
+#SBATCH -N 1
+#SBATCH -c 16
+#SBATCH --mem=10G
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=elizaveta.terlova@uconn.edu
+#SBATCH -o %x_%A.out
+#SBATCH -e %x_%A.err
+
+hostname
+date
+
+##########################################################
+##              QUAST                                   ##      
+##########################################################
+
+module load quast/5.0.2
+
+quast.py /home/CAM/eterlova/2021DA_genomes/04_Assembly/Flye/JT2_flye_polish6/assembly.fasta \
+        --threads 16 \
+        -o JT2_quast_flye_polish6</pre>
 
