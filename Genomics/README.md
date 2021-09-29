@@ -236,7 +236,8 @@ In this step we uses three asseblers Canu, Flye, and Shasta on the filtered and 
 
 ### Shasta assembly
 The most rapid assembler. The script, which we used 'shasta.sh':
-<pre style="color: silver; background: black;">#!/bin/bash
+<pre style="color: silver; background: black;">
+#!/bin/bash
 #SBATCH --job-name=JT2_shasta
 #SBATCH -n 1
 #SBATCH -N 1
@@ -273,7 +274,8 @@ Assembly is saved in a file Assembly.fasta
 
 ### Flye assembly and polish
 We usee flye assembly with 6 polishing iterations (number of iteration was chosen from several options using Busco scores). The script 'flye.sh':
-<pre style="color: silver; background: black;">#!/bin/bash
+<pre style="color: silver; background: black;">
+#!/bin/bash
 #SBATCH --job-name=JT2_flye6
 #SBATCH -n 1
 #SBATCH -N 1
@@ -304,7 +306,8 @@ Assembly is saved in a file assembly.fasta
 ### Canu assembly
 Canu takes much longer to finish than the other two assemblers. Note: the email signaling the finish of a job comes much earlier than the job is actually over. Monitor the active jobs on the cluster using the command <pre style="color: silver; background: black;">squeue job# </pre>
 The script used for Canu assembly:
-<pre style="color: silver; background: black;">#!/bin/bash
+<pre style="color: silver; background: black;">
+#!/bin/bash
 #SBATCH --job-name=JT2_canu
 #SBATCH -n 1
 #SBATCH -N 1
@@ -331,5 +334,116 @@ We evaluated initial assemblies with Busco and QUAST
 
 ### Busco
 To run Busco it is necessary to copy the augustus config directory and an appropriate busco library to an accessible location.
+<pre style="color: silver; background: black;">
+#!/bin/bash
+#SBATCH --job-name=JT2_busco_flye
+#SBATCH -n 1
+#SBATCH -N 1
+#SBATCH -c 1
+#SBATCH --mem=5G
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=elizaveta.terlova@uconn.edu
+#SBATCH -o %x_%A.out
+#SBATCH -e %x_%A.err
 
+hostname
+date
+
+##########################################################
+##              BUSCO                                   ##      
+##########################################################
+
+module load busco/4.0.2
+
+export AUGUSTUS_CONFIG_PATH=./augustus_config
+
+busco -i /home/CAM/eterlova/2021DA_genomes/04_Assembly/Flye/JT2_flye_polish6/assembly.fasta \
+        -o JT2_busco_flye6_chlorophyta -l ./chlorophyta_odb10 -m genome</pre>
+        
+<table>
+  <tr>
+    <td></td>
+    <td colspan="3"><i>T. adustus</i> (JT2-VF29)</td>
+    <td colspan="3"><i>T. bajacalifornicus</i> (ZA 1-7)</td>
+    <td colspan="3"><i>T. "raciborskii"</i> (CCAP 276/35)</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Shasta</td>
+    <td>Flye + 6 polish</td>
+    <td>Canu</td>
+    <td>Shasta</td>
+    <td>Flye + 6 polish</td>
+    <td>Canu</td>
+    <td>Shasta</td>
+    <td>Flye + 6 polish</td>
+    <td>Canu</td>
+  </tr>
+  <tr>
+    <td>Complete BUSCOs</td>
+    <td>73.8%</td>
+    <td>74%</td>
+    <td>78.9%</td>
+    <td>50.9%</td>
+    <td>65.1%</td>
+    <td>67.7%</td>
+    <td>44.9%</td>
+    <td>66.0%</td>
+    <td>68.1%</td>    
+  </tr>
+  <tr>
+    <td>Complete and single-copy</td>
+    <td>71.4%</td>
+    <td>70.2%</td>
+    <td>74.0%</td>
+    <td>40.2%</td>
+    <td>59.2%</td>
+    <td>45.2%</td>
+    <td>40.5%</td>
+    <td>60.6%</td>
+    <td>62.1%</td>  
+  </tr>
+   <tr>
+    <td>Complete and duplicated</td>
+    <td>2.4%</td>
+    <td>3.8%</td>
+    <td>4.9%</td>
+    <td>10.7%</td>
+    <td>5.9%</td>
+    <td>22.5%</td>
+    <td>4.4%</td>
+    <td>5.4%</td>
+    <td>6.0%</td> 
+  </tr>
+   <tr>
+    <td>Fragmented BUSCOs</td>
+    <td>1.7%</td>
+    <td>2.3%</td>
+    <td>2.0%</td>
+    <td>2.2%</td>
+    <td>2.0%</td>
+    <td>2.6%</td>
+    <td>2.9%</td>
+    <td>1.8%</td>
+    <td>2.9%</td>
+  </tr>
+   <tr>
+    <td>Missong BUSCOs</td>
+    <td>24.5%</td>
+    <td>23.7%</td>
+    <td>19.1%</td>
+    <td>46.9%</td>
+    <td>32.9%</td>
+    <td>29.7%</td>
+    <td>52.2%</td>
+    <td>32.2%</td>
+    <td>29.0%</td>
+  </tr>
+   <tr>
+    <td>Total groups searched</td>
+    <td colspan="9">1519</td>
+  </tr>
+</table>
 
