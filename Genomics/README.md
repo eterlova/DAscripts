@@ -749,3 +749,64 @@ QUAST results on initial assemlies:
     <td>0</td>
   </tr>
 </table>
+
+### Coverage estimates after initial assembly (Our goal is 40x):
+
+|  | *T. adustus* | *T. bajacalifornicus* | *T. "raciborskii"* | 
+| :------: | :------: |  :------: |  :------: |
+|  | **JT2-VF29** |  **ZA 1-7** |  **CCAP 276/35** |
+| Total bases | 29,468,000,848.0 |  17,388,312,276.0 |  :------: |
+| Genome size | 1,5e+8 |  1,5e+8 |  1,5e+8 |
+| Initial coverage | 196.4X |  115.9X |  :------: |
+| coverage | 196.4X |  115.9X |  :------: |
+
+<table>
+   <tr>
+    <td></td>
+    <td colspan="3"><i>T. adustus</i> (JT2-VF29)</td>
+    <td colspan="3"><i>T. bajacalifornicus</i> (ZA 1-7)</td>
+    <td colspan="3"><i>T. "raciborskii"</i> (CCAP 276/35)</td>
+  </tr>
+   <tr>
+    <td></td>
+    <td>Shasta</td>
+    <td>Flye + 6 polish</td>
+    <td>Canu</td>
+    <td>Shasta</td>
+    <td>Flye + 6 polish</td>
+    <td>Canu</td>
+    <td>Shasta</td>
+    <td>Flye + 6 polish</td>
+    <td>Canu</td>
+  </tr>
+  <tr>
+    <td>Initial coverage</td>
+    <td colspan="3">196.4X</td>
+    <td colspan="3">115.9X</td>
+    <td colspan="3">:------:</td>
+  </tr>
+  <tr>
+    <td>Total assembly length</td>
+    <td>89465383</td>
+    <td>89991907</td>
+    <td>107451818</td>
+    <td>85470368</td>
+    <td>89620473</td>
+    <td>130781131</td>
+    <td>68540671</td>
+    <td>88957848</td>
+    <td>110886168</td>
+  </tr>
+  <tr>
+    <td>Initial assembly coverage</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>        
