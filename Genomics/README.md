@@ -476,4 +476,276 @@ module load quast/5.0.2
 quast.py /home/CAM/eterlova/2021DA_genomes/04_Assembly/Flye/JT2_flye_polish6/assembly.fasta \
         --threads 16 \
         -o JT2_quast_flye_polish6</pre>
-
+QUAST results on initial assemlies:
+<table>
+  <tr>
+    <td></td>
+    <td colspan="3"><i>T. adustus</i> (JT2-VF29)</td>
+    <td colspan="3"><i>T. bajacalifornicus</i> (ZA 1-7)</td>
+    <td colspan="3"><i>T. "raciborskii"</i> (CCAP 276/35)</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Shasta</td>
+    <td>Flye + 6 polish</td>
+    <td>Canu</td>
+    <td>Shasta</td>
+    <td>Flye + 6 polish</td>
+    <td>Canu</td>
+    <td>Shasta</td>
+    <td>Flye + 6 polish</td>
+    <td>Canu</td>
+  </tr>
+  <tr>
+    <td># contigs (>= 0 bp)</td>
+    <td>2300</td>
+    <td>890</td>
+    <td>1980</td>
+    <td>5211</td>
+    <td>1402</td>
+    <td>3604</td>
+    <td>3161</td>
+    <td>1881</td>
+    <td>4672</td>    
+  </tr>
+  <tr>
+    <td># contigs (>= 1000 bp)</td>
+    <td>1836</td>
+    <td>877</td>
+    <td>1980</td>
+    <td>3654</td>
+    <td>1317</td>
+    <td>3604</td>
+    <td>2468</td>
+    <td>1834</td>
+    <td>4672</td>  
+  </tr>
+   <tr>
+    <td># contigs (>= 5000 bp)</td>
+    <td>1640</td>
+    <td>856</td>
+    <td>1924</td>
+    <td>2892</td>
+    <td>1238</td>
+    <td>3463</td>
+    <td>1958</td>
+    <td>1683</td>
+    <td>3415</td> 
+  </tr>
+   <tr>
+    <td># contigs (>= 10000 bp)</td>
+    <td>1445</td>
+    <td>838</td>
+    <td>1759</td>
+    <td>2295</td>
+    <td>1191</td>
+    <td>3115</td>
+    <td>1560</td>
+    <td>1531</td>
+    <td>2552</td>
+  </tr>
+  <tr>
+    <td># contigs (>= 25000 bp)</td>
+    <td>965</td>
+    <td>750</td>
+    <td>1153</td>
+    <td>1018</td>
+    <td>1033</td>
+    <td>1796</td>
+    <td>702</td>
+    <td>1045</td>
+    <td>1202</td>
+  </tr>
+  <tr>
+    <td># contigs (>= 50000 bp)</td>
+    <td>528</td>
+    <td>565</td>
+    <td>606</td>
+    <td>325</td>
+    <td>629</td>
+    <td>628</td>
+    <td>228</td>
+    <td>503</td>
+    <td>365</td>
+  </tr>
+  <tr>
+    <td>Total length (>= 0 bp)</td>
+    <td>89518716</td>
+    <td>89993021</td>
+    <td>107451818</td>
+    <td>85647687</td>
+    <td>89621955</td>
+    <td>130781131</td>
+    <td>68613698</td>
+    <td>88960490</td>
+    <td>110886168</td>
+  </tr>
+  <tr>
+    <td>Total length (>= 1000 bp)</td>
+    <td>89436720</td>
+    <td>89984635</td>
+    <td>107451818</td>
+    <td>85297300</td>
+    <td>89564644</td>
+    <td>130781131</td>
+    <td>68427280</td>
+    <td>88928315</td>
+    <td>110886168</td>
+  </tr>
+  <tr>
+    <td>Total length (>= 5000 bp)</td>
+    <td>88908256</td>
+    <td>89930506</td>
+    <td>107273257</td>
+    <td>83305064</td>
+    <td>89335505</td>
+    <td>130304813</td>
+    <td>67066977</td>
+    <td>88532410</td>
+    <td>107022858</td>
+  </tr>
+  <tr>
+    <td>Total length (>= 10000 bp)</td>
+    <td>87449416</td>
+    <td>89792771</td>
+    <td>106037740</td>
+    <td>78870054</td>
+    <td>88983381</td>
+    <td>127613704</td>
+    <td>64123976</td>
+    <td>87395602</td>
+    <td>100772517</td>
+  </tr>
+  <tr>
+    <td>Total length (>= 25000 bp)</td>
+    <td>79279233</td>
+    <td>88209660</td>
+    <td>95427359</td>
+    <td>57823580</td>
+    <td>86108746</td>
+    <td>104683856</td>
+    <td>49954614</td>
+    <td>78824780</td>
+    <td>78251335</td>
+  </tr>
+  <tr>
+    <td>Total length (>= 50000 bp)</td>
+    <td>63563147</td>
+    <td>81350788</td>
+    <td>75939084</td>
+    <td>33653002</td>
+    <td>70963916</td>
+    <td>62996544</td>
+    <td>33674243</td>
+    <td>59247731</td>
+    <td>49361678</td>
+  </tr>
+  <tr>
+    <td># contigs</td>
+    <td>1876</td>
+    <td>887</td>
+    <td>1980</td>
+    <td>3887</td>
+    <td>1395</td>
+    <td>3604</td>
+    <td>2618</td>
+    <td>1875</td>
+    <td>4672</td>
+  </tr>
+  <tr>
+    <td>Largest contig</td>
+    <td>3783513</td>
+    <td>3001104</td>
+    <td>3735962</td>
+    <td>1955127</td>
+    <td>2989700</td>
+    <td>3561109</td>
+    <td>3809581</td>
+    <td>3958325</td>
+    <td>3733122</td>
+  </tr>
+  <tr>
+    <td>Total length</td>
+    <td>89465383</td>
+    <td>89991907</td>
+    <td>107451818</td>
+    <td>85470368</td>
+    <td>89620473</td>
+    <td>130781131</td>
+    <td>68540671</td>
+    <td>88957848</td>
+    <td>110886168</td>
+  </tr>
+  <tr>
+    <td>GC (%)</td>
+    <td>57.92</td>
+    <td>57.6</td>
+    <td>58.42</td>
+    <td>57.28</td>
+    <td>57.94</td>
+    <td>57.82</td>
+    <td>61.11</td>
+    <td>59.95</td>
+    <td>59.46</td>
+  </tr>
+  <tr>
+    <td>N50</td>
+    <td>85291</td>
+    <td>156055</td>
+    <td>90850</td>
+    <td>38522</td>
+    <td>92331</td>
+    <td>48050</td>
+    <td>48310</td>
+    <td>74001</td>
+    <td>42675</td>
+  </tr>
+  <tr>
+    <td>N75</td>
+    <td>43722</td>
+    <td>82732</td>
+    <td>43651</td>
+    <td>20445</td>
+    <td>55001</td>
+    <td>28615</td>
+    <td>23339</td>
+    <td>40657</td>
+    <td>21910</td>
+  </tr>
+  <tr>
+    <td>L50</td>
+    <td>242</td>
+    <td>158</td>
+    <td>280</td>
+    <td>534</td>
+    <td>243</td>
+    <td>667</td>
+    <td>241</td>
+    <td>260</td>
+    <td>498</td>
+  </tr>
+  <tr>
+    <td>L75</td>
+    <td>604</td>
+    <td>353</td>
+    <td>706</td>
+    <td>1297</td>
+    <td>559</td>
+    <td>1551</td>
+    <td>762</td>
+    <td>670</td>
+    <td>1413</td>
+  </tr>
+  <tr>
+    <td># N's per 100 kbp</td>
+    <td>0</td>
+    <td>0.22</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0.33</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0.22</td>
+    <td>0</td>
+  </tr>
+</table>
