@@ -324,5 +324,12 @@ canu useGrid=true \
         -p JT2 -d JT2 \
         genomeSize=150M \
         -nanopore ../../03_Porechop/JT2_trimmed.fasta gridOptions="--partition=himem2 --qos=himem  --mem-per-cpu=24G --cpus-per-task=24"</pre>
+Assembly is saved as contigs.fasta file
+
+## 3. Assembly Evaluation
+We evaluated initial assemblies with Busco and QUAST
+
+### Busco
+To run Busco it is necessary to copy the augustus config directory and an appropriate busco library to an accessible location.
 
 
