@@ -130,7 +130,14 @@ Results:
     <td>w/o human</td>
     <td>with human</td>
     <td>w/o human</td>
-    <td>with human</td>
-    <td>w/o human</td>
+  </tr>
+  <tr>
+    <td>% mapped to Canu</td>
+    <td colspan="2">93.63%</td>
+    <td colspan="2">58.77%</td>
+    <td colspan="2">70.33%</td>
+    <td colspan="2">10.18%</td>
+    <td colspan="2">90.41%</td>
+    <td colspan="2">22.84%</td>
   </tr>
 </table>
