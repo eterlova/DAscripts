@@ -166,17 +166,17 @@ Results:
   </tr>
   <tr>
     <td># seqs classified</td>
-    <td></td>
+    <td>855677</td>
     <td>236933</td>
-    <td></td>
+    <td>7409791</td>
     <td>6145581</td>
-    <td></td>
+    <td>1400401</td>
     <td>502922</td>
-    <td></td>
+    <td>6257399</td>
     <td>3414207</td>
-    <td></td>
+    <td>923605</td>
     <td>329344</td>
-    <td></td>
+    <td>1545398</td>
     <td>574921</td>
   </tr>
   <tr>
@@ -196,17 +196,17 @@ Results:
   </tr>
   <tr>
     <td># seqs unclassified</td>
-    <td></td>
+    <td>14249138</td>
     <td>14867882</td>
-    <td></td>
+    <td>4508141</td>
     <td>55772351</td>
-    <td></td>
+    <td>14773325</td>
     <td>15670804</td>
-    <td></td>
+    <td>30431039</td>
     <td>33274231</td>
-    <td></td>
+    <td>14508238</td>
     <td>15102499</td>
-    <td></td>
+    <td>13029458</td>
     <td>13999935</td>
   </tr>
   <tr>
