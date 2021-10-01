@@ -52,3 +52,85 @@ These are the associated names of all the samples given in the directory ("Barco
 | *T. "raciborskii"* | CCAP 276/35 | Rehydrated 24 hrs | ET006 | 176 |
 | *T. "raciborskii"* | CCAP 276/35 | Rehydrated 24 hrs | ET024 | 166 |
 | *T. "raciborskii"* | CCAP 276/35 | Rehydrated 24 hrs | ET035 | 56 |
+
+## Quality Assesment
+
+## Contaminant Screening
+To screen contaminants I used Kraken 2 first, with general contaminant library (includes human genome), then -- without it. In both cases the analysis was performed on two libraries per species: one with the highest genome mapping rate, another -- with th lowest. Script 'kraken2.sh':
+<pre style="color: silver; background: black;">
+#!/bin/bash
+#SBATCH --job-name=Kraken2
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=200G
+#SBATCH --partition=general
+#SBATCH --qos=general
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=elizaveta.terlova@uconn.edu
+#SBATCH -o %x_%j.out
+#SBATCH -e %x_%j.err
+
+hostname
+date
+
+
+#cat ../01_Trimmomatic/573_paired_1.fq ../01_Trimmomatic/574_paired_1.fq ../01_Trimmomatic/575_paired_1.fq ../01_Trimmomatic/576_paired_1.fq ../01_Trimmomatic/577_paired_1.fq ../01_Trimmomatic/578_paired_1.fq ../01_Trimmomatic/579_paired_1.fq ../01_Trimmomatic/580_paired_1.fq >> cat_R1.fq
+
+#cat ../01_Trimmomatic/573_paired_2.fq ../01_Trimmomatic/574_paired_2.fq ../01_Trimmomatic/575_paired_2.fq ../01_Trimmomatic/576_paired_2.fq ../01_Trimmomatic/577_paired_2.fq ../01_Trimmomatic/578_paired_2.fq ../01_Trimmomatic/579_paired_2.fq ../01_Trimmomatic/580_paired_2.fq >> cat_R2.fq
+
+
+module load kraken/2.0.8-beta
+module load jellyfish/2.2.6
+
+for i in 25 28 23 5 12 34
+
+do kraken2 -db /isg/shared/databases/kraken2/Minikraken2_v1 \
+        --paired ~/2021DA_transcriptomes/01_QC/QC_tworuns_June2021/trim_ET${i}_R1.fastq.gz ~/2021DA_transcriptomes/01_QC/QC_tworuns_June2021/trim_ET${i}_R2.fastq.gz \
+        --use-names \
+        --threads 16 \
+        --output lib${i}_general.out \
+        --unclassified-out lib${i}_unclassified#.fastq \
+        --classified-out lib${i}_classified#.fastq      \
+        --report lib${i}_kraken_report.txt \
+        --use-mpa-style
+done
+date
+</pre>
+
+Results:
+
+<table>
+  <tr>
+    <td></td>
+    <td colspan="4"><i>T. adustus</i> (JT2-VF29)</td>
+    <td colspan="4"><i>T. bajacalifornicus</i> (ZA 1-7)</td>
+    <td colspan="4"><i>T. "raciborskii"</i> (CCAP 276/35)</td>
+  </tr>
+  <tr>
+    <td>Library</td>
+    <td colspan="2">25</td>
+    <td colspan="2">28</td>
+    <td colspan="2">12</td>
+    <td colspan="2">34</td>
+    <td colspan="2">23</td>
+    <td colspan="2">5</td>
+  </tr>
+  <tr>
+    <td>Database</td>
+    <td>with human</td>
+    <td>w/o human</td>
+    <td>with human</td>
+    <td>w/o human</td>
+    <td>with human</td>
+    <td>w/o human</td>
+    <td>with human</td>
+    <td>w/o human</td>
+    <td>with human</td>
+    <td>w/o human</td>
+    <td>with human</td>
+    <td>w/o human</td>
+    <td>with human</td>
+    <td>w/o human</td>
+  </tr>
+</table>
