@@ -1,4 +1,17 @@
-These are the associated names of all the samples given in the directory (Barcode is a unique number of the sample in the whole of the expeeriment); desiccation mode: slow desiccation to RH 11% (Alpha)
+## Differential expression during desiccation and rehydration in two desert and one aquatic sister species
+
+## Introduction
+Tetradesmus bajacalifornicus (ZA1-7) and T. adustus (JT2-VF29) are closely related desert species, T. "raciborskii" (CCAP 276/35) is an aquatic species sister to both of them. Algae were slowly desiccated until the RH in the chamber reached 11% (Alpha in my lab notes).
+
+### Directory Layout
+The data used in this project can be accessed in the Xanadu cluster at the following directory: 'LLewis_lab'
+<br>
+To view the files use the following command:
+<br>
+<pre style="color: silver; background: black;">-bash-4.2$ ls LLewis_lab
+data 01_QC 01.2_Kraken 02_Assembly_Trinity 03_Coding_Regions 04_Clustering 05_AssemblyEvaluation 06_RemoveContaminants</pre>
+
+These are the associated names of all the samples given in the directory ("Barcode" is a unique number of the sample in the whole of the experiment):
 <br>
 
 | Species| Strain | Hydration State | Sample | Barcode |
