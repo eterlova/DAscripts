@@ -135,7 +135,7 @@ Centrifuge results (evaluated with Nanoplot):
     <td>5,634.7</td>
     <td></td>
     <td>1,229.9</td>
-    <td></td>
+    <td>1,419.3</td>
   </tr>
    <tr>
     <td>Mean read quality</td>
@@ -144,7 +144,7 @@ Centrifuge results (evaluated with Nanoplot):
     <td>11.9</td>
     <td></td>
     <td>12.2</td>
-    <td></td>
+    <td>12.2</td>
   </tr>
    <tr>
     <td>Median read length</td>
@@ -153,7 +153,7 @@ Centrifuge results (evaluated with Nanoplot):
     <td>1,760.0</td>
     <td></td>
     <td>551.0</td>
-    <td></td>
+    <td>566.0</td>
   </tr>
    <tr>
     <td>Median read quality</td>
@@ -162,7 +162,7 @@ Centrifuge results (evaluated with Nanoplot):
     <td>12.1</td>
     <td></td>
     <td>12.3</td>
-    <td></td>
+    <td>12.3</td>
   </tr>
    <tr>
     <td>Number of reads</td>
@@ -171,7 +171,7 @@ Centrifuge results (evaluated with Nanoplot):
     <td>1,027,612.0</td>
     <td></td>
     <td>9,597,728.0</td>
-    <td></td>
+    <td>10,007,974.0</td>
   </tr>
    <tr>
     <td>Read length N50</td>
@@ -180,7 +180,7 @@ Centrifuge results (evaluated with Nanoplot):
     <td>13,790.0</td>
     <td></td>
     <td>2,339.0</td>
-    <td></td>
+    <td>3,336.0</td>
   </tr>
    <tr>
     <td>Total bases</td>
@@ -189,7 +189,7 @@ Centrifuge results (evaluated with Nanoplot):
     <td>5,790,296,574.0</td>
     <td></td>
     <td>11,804,110,380.0</td>
-    <td></td>
+    <td>14,204,121,505.0</td>
   </tr>
   <tr>
     <td>Genome coverage </td>
@@ -198,7 +198,7 @@ Centrifuge results (evaluated with Nanoplot):
     <td>38.6X</td>
     <td></td>
     <td>78.7X</td>
-    <td></td>
+    <td>94.7X</td>
   </tr>
 </table>
 
