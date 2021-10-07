@@ -230,6 +230,86 @@ Command options:
 [-o OUTPUT]
 [--format {auto,fasta,fastq,fasta.gz,fastq.gz}] [-v VERBOSITY]
                [-t THREADS] </pre>
+               
+Porechop results (evaluated with Nanoplot; bp refers to a centrifuge run used as input for Porechop):
+
+<table>
+  <tr>
+    <td></td>
+    <td colspan="2"><i>T. adustus</i></td>
+    <td colspan="2"><i>T. bajacalifornicus</i></td>
+    <td colspan="2"><i>T. "raciborskii"</i></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td colspan="2"><b> JT2-VF29</b></td>
+    <td colspan="2"> <b> ZA 1-7 </b></td>
+    <td colspan="2"><b> CCAP 276/35</b></td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td> 30 bp </td>
+    <td> 50 bp</td>
+    <td> 30 bp </td>
+    <td> 50 pb </td>
+    <td> 30 bp </td>
+    <td> 50 bp </td>     
+  </tr>
+  <tr>
+    <td>Mean read length</td>
+    <td></td>
+    <td></td>
+    <td>5,540.6</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Median read length</td>
+    <td></td>
+    <td></td>
+    <td>1,678.0</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Number of reads</td>
+    <td></td>
+    <td></td>
+    <td>1,025,605.0</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Read length N50</td>
+    <td></td>
+    <td></td>
+    <td>13,801.0</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Total bases</td>
+    <td></td>
+    <td></td>
+    <td>5,682,497,194.0</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Genome coverage </td>
+    <td></td>
+    <td></td>
+    <td>37.9X</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
 ## 2. Assembly
 In this step we uses three asseblers Canu, Flye, and Shasta on the filtered and trimmed reads.
