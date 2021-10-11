@@ -49,22 +49,22 @@ Main metrics from Nanoplot:
 | Feature | *T. adustus* | *T. bajacalifornicus* | *T. "raciborskii"* | 
 | :------: | :------: |  :------: |  :------: |
 |  | **JT2-VF29** |  **ZA 1-7** |  **CCAP 276/35** |
-| Mean read length | 6,083.5 |  9,954.0 |  :------: |
-| Mean read quality | 12.1 |  11.9 |  :------: |
-| Median read length | 2,699.0 |  7,900.0 |  :------: |
-| Median read quality | 12.4 |  12.2 |  :------: |
-| Number of reads | 4,843,950.0 |  1,746,873.0 |  :------: |
-| Read length N50 | 12,769.0 |  17,894.0 |  :------: |
-| Total bases | 29,468,000,848.0 |  17,388,312,276.0 |  :------: |
+| Mean read length | 6,083.5 |  9,954.0 | 1,466.3 |
+| Mean read quality | 12.1 |  11.9 |  12.2 |
+| Median read length | 2,699.0 |  7,900.0 |  569.0 |
+| Median read quality | 12.4 |  12.2 |  12.3 |
+| Number of reads | 4,843,950.0 |  1,746,873.0 |  10,074,365.0 |
+| Read length N50 | 12,769.0 |  17,894.0 |  3,691.0 |
+| Total bases | 29,468,000,848.0 |  17,388,312,276.0 |  14,772,050,351.0 |
 
 Coverage estimates (Our goal is 40x):
 
 |  | *T. adustus* | *T. bajacalifornicus* | *T. "raciborskii"* | 
 | :------: | :------: |  :------: |  :------: |
 |  | **JT2-VF29** |  **ZA 1-7** |  **CCAP 276/35** |
-| Total bases | 29,468,000,848.0 |  17,388,312,276.0 |  :------: |
-| Genome size | 1,5e+8 |  1,5e+8 |  1,5e+8 |
-| Initial coverage | 196.4X |  115.9X |  :------: |
+| Total bases | 29,468,000,848.0 |  17,388,312,276.0 |  14,772,050,351.0 |
+| Genome size | 1.5e+8 |  1.5e+8 |  1.5e+8 |
+| Initial coverage | 196.4X |  115.9X |  98.5X |
 
 ### Contaminant Screening
 To filter out bacterial and fungal contaminants we ran Centrifuge. We ran centrifuge two times with varying hit lengths (30 and 50 bp). Here is the script we used 'centrifuge.sh':
