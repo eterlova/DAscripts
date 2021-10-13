@@ -54,6 +54,7 @@ These are the associated names of all the samples given in the directory ("Barco
 | *T. "raciborskii"* | CCAP 276/35 | Rehydrated 24 hrs | ET035 | 56 |
 
 ## Quality Assesment
+We summarized the libraries using <pre style="color: silver; background: black;"> FastQC </pre> and <pre style="color: silver; background: black;"> MultiQC </pre>. The full script is called 'fastqc_raw.sh'. Based on the results, all libraries with less than 10M total reads were eliminated (libraries 24 & 35). Since both of these low-quality libraries belong to the same set of samples, the whole set (*T. "raciborskii"* Rehydrated 24 hrs) was eliminated from the downstream analysis.
 
 ## Contaminant Screening
 To screen contaminants I used Kraken 2 first, with general contaminant library (includes human genome), then -- without it. In both cases the analysis was performed on two libraries per species: one with the highest genome mapping rate, another -- with th lowest. Script 'kraken2.sh':
@@ -271,4 +272,22 @@ Results:
   </tr>
 </table>
 
-## 
+## De Novo Transcriptome Assembly with Trinity
+To create the reference transcriptome we first assembled each library separately, then combined them by species, clustered the assembly into groups, each of which hopefully represents a transcript.
+
+The script, which we used to assemble each library 'trinity.sh':
+<pre style="color: silver; background: black;"> </pre>
+
+## Making a Reference Transcriptome
+We need to create a single reference transcriptome per species containing one reference transcript per gene. To create such a reference we used two pipelines: TransDecoder-Hummer-VSearch and EviGene.
+
+### 1.1. Identifying Coding Regions with TransDecoder and Hummer
+
+### 1.2. Clustering with VSearch
+
+### 1.3 Contaminant Screening with EnTAP
+
+### 2.1 EviGene Pipeline
+
+### 2.2 Contaminant screening with EnTAP
+
