@@ -290,85 +290,34 @@ DIAMOND best overall results
 
 | | <i>T. adustus</i> | <i>T. bajacalifornicus</i> | <i>T. "raciborskii"</i> |
 | :------: | :------: |  :------: |  :------: |
-| * Total unique contaminants * | 166(1.05%) |  :------: |  :------: |
-| * Amoebozoa * | 4.22% |  :------: |  :------: |
+| *Total unique contaminants* | 166(1.05%) |  236 (1.21%) |  223 (0.98%) |
+| *Amoebozoa* | 4.22% |  11(4.66%) |  7(3.14%) |
+| *Fungi* | 50(30.12%) |  81(34.32%) |  51(22.87%) |
+| *Ciliophora* | 4(2.41%) |  1(0.42%) |  4(1.79%) |
+| *Bacteria* | 105(63.25%) |  143(60.59%) |  161(72.20%) |
+| :------: | :------: |  :------: |  :------: |
+| Top 10 contaminants | <i>Saccharomyces cerevisiae<i> 16(9.64%) |  <i>Schizosaccharomyces pombe<i> 25(10.59%) |  <i>Schizosaccharomyces pombe<i> 17(7.62%) |
+|  | <i>Synechocystis<i> sp. 12(7.23%) | <i>Bacillus subtilis<i> 16(6.78%)  | <i>Yersinia enterocolitica<i> 15(6.73%) |
+|  | <i>Yersinia enterocolitica<i> 11(6.63%) | <i>Saccharomyces cerevisiae<i> 15(6.36%) | <i>Bacillus subtilis<i> 13(5.83%) |
+|  | <i>Schizosaccharomyces pombe<i> 10(6.02%) | <i>Yersinia enterocolitica<i> 14(5.93%)  | <i>Saccharomyces cerevisiae<i> 12(5.38%) |
+|  | <i>Staphylococcus epidermidis<i> 9(5.42%) | <i>Escherichia coli<i> 11(4.66%) | <i>Escherichia coli<i> 11(4.93%) |
+|  | <i>Escherichia coli<i> 9(5.42%) | <i>Dictyostelium discoideum<i> 11(4.66%) | <i>Xanthomonas campestris<i> 9(4.04%) |
+|  | <i>Dictyostelium discoideum<i> 7(4.22%) | <i>Synechocystis<i> sp. 11(4.66%) | <i>Synechocystis<i> sp. 9(4.04%) |
+|  | <i>Candida albicans<i> 6(3.61%) | <i>Candida albicans<i> 10(4.24%) | <i>Thermotoga maritima<i> 7(3.14%) |
+|  | <i>Bacillus subtilis<i> 6(3.61%) | <i>Desulforudis audaxviator<i> 7(2.97%) | <i>Dictyostelium discoideum<i> 7(3.14%) |
+|  | <i>Neurospora crassa<i> 5(3.01%) | <i>Synechococcus<i> sp. 7(2.97%) | <i>Caldanaerobacter subterraneus<i> 6(2.69%) |
+| :------: | :------: |  :------: |  :------: |
+| Top 10 alignments by species | :------: |  <i>Monoraphidium neglectum<i> 5874(29.99%)| <i>Monoraphidium neglectum<i>  6003(26.52%) |
+| :------: | :------: |  <i>Chlamydomonas reinhardtii<i> 4310(22.01%) | <i>Chlamydomonas reinhardtii<i> 4607(20.35%) |
+| :------: | :------: |  <i>Volvox carteri f. nagariensis<i> 2748(14.03%) | <i>Volvox carteri f. nagariensis<i> 3035(13.41%) |
+| :------: | :------: |  <i>Coccomyxa subellipsoidea<i> 1912(9.76%) | <i>Coccomyxa subellipsoidea<i> 1770(7.82%) |
+| :------: | :------: |  <i>Chlorella variabilis<i> 912(4.66%) | <i>Mus musculus<i> 1684(7.44%) |
+| :------: | :------: |  <i>Mus musculus<i> 463(2.36%) | <i>Chlorella variabilis<i> 938(4.14%) |
+| :------: | :------: |  <i>Arabidopsis thaliana<i> 435(2.22%) | <i>Rhodamnia argentea<i> 525(2.32%) |
+| :------: | :------: |  <i>Auxenochlorella protothecoides<i> 414(2.11%) | <i>Auxenochlorella protothecoides<i> 458(2.02%) |
+| :------: | :------: |  <i>Rhodamnia argentea<i> 138(0.70%) | <i>Arabidopsis thaliana<i> 457(2.02%) |
+| :------: | :------: |  <i>Micromonas commoda<i> 103(0.53%) | <i>Drosophila melanogaster<i> 186(0.82%) |        
 
-Flagged contaminants (all % based on total contaminants):
-                        amoebozoa: 7(4.22%)
-                        fungi: 50(30.12%)
-                        ciliophora: 4(2.41%)
-                        bacteria: 105(63.25%)
-Top 10 contaminants by species:
-                        1)saccharomyces cerevisiae (strain atcc 204508 / s288c): 16(9.64%)
-                        2)synechocystis sp. (strain pcc 6803 / kazusa): 12(7.23%)
-                        3)yersinia enterocolitica serotype o:8 / biotype 1b (strain nctc 13174 / 8081): 11(6.63%)
-                        4)schizosaccharomyces pombe (strain 972 / atcc 24843): 10(6.02%)
-                        5)staphylococcus epidermidis (strain atcc 35984 / rp62a): 9(5.42%)
-                        6)escherichia coli (strain k12): 9(5.42%)
-                        7)dictyostelium discoideum: 7(4.22%)
-                        8)candida albicans (strain sc5314 / atcc mya-2876): 6(3.61%)
-                        9)bacillus subtilis (strain 168): 6(3.61%)
-                        10)neurospora crassa (strain atcc 24698 / 74-or23-1a / cbs 708.71 / dsm 1257 / fgsc 987): 5(3.01%)
-
-* <i>T. bajacalifornicus</i> *
-Total unique contaminants: 236 (1.21%)
-Flagged contaminants (all % based on total contaminants):
-                        ciliophora: 1(0.42%)
-                        amoebozoa: 11(4.66%)
-                        fungi: 81(34.32%)
-                        bacteria: 143(60.59%)
-Top 10 contaminants by species:
-                        1)schizosaccharomyces pombe (strain 972 / atcc 24843): 25(10.59%)
-                        2)bacillus subtilis (strain 168): 16(6.78%)
-                        3)saccharomyces cerevisiae (strain atcc 204508 / s288c): 15(6.36%)
-                        4)yersinia enterocolitica serotype o:8 / biotype 1b (strain nctc 13174 / 8081): 14(5.93%)
-                        5)escherichia coli (strain k12): 11(4.66%)
-                        6)dictyostelium discoideum: 11(4.66%)
-                        7)synechocystis sp. (strain pcc 6803 / kazusa): 11(4.66%)
-                        8)candida albicans (strain sc5314 / atcc mya-2876): 10(4.24%)
-                        9)desulforudis audaxviator (strain mp104c): 7(2.97%)
-                        10)synechococcus sp. (strain atcc 27264 / pcc 7002 / pr-6): 7(2.97%)
-Top 10 alignments by species:
-                        1)monoraphidium neglectum: 5874(29.99%)
-                        2)chlamydomonas reinhardtii: 4310(22.01%)
-                        3)volvox carteri f. nagariensis: 2748(14.03%)
-                        4)coccomyxa subellipsoidea c-169: 1912(9.76%)
-                        5)chlorella variabilis: 912(4.66%)
-                        6)mus musculus: 463(2.36%)
-                        7)arabidopsis thaliana: 435(2.22%)
-                        8)auxenochlorella protothecoides: 414(2.11%)
-                        9)rhodamnia argentea: 138(0.70%)
-                        10)micromonas commoda: 103(0.53%)
-
-* <i>T. "raciborskii"</i> *
-Total unique contaminants: 223 (0.98%)
-Flagged contaminants (all % based on total contaminants):
-                        ciliophora: 4(1.79%)
-                        amoebozoa: 7(3.14%)
-                        fungi: 51(22.87%)
-                        bacteria: 161(72.20%)
-Top 10 contaminants by species:
-                        1)schizosaccharomyces pombe (strain 972 / atcc 24843): 17(7.62%)
-                        2)yersinia enterocolitica serotype o:8 / biotype 1b (strain nctc 13174 / 8081): 15(6.73%)
-                        3)bacillus subtilis (strain 168): 13(5.83%)
-                        4)saccharomyces cerevisiae (strain atcc 204508 / s288c): 12(5.38%)
-                        5)escherichia coli (strain k12): 11(4.93%)
-                        6)xanthomonas campestris pv. campestris (strain atcc 33913 / dsm 3586 / ncppb 528 / lmg 568 / p 25): 9(4.04%)
-                        7)synechocystis sp. (strain pcc 6803 / kazusa): 9(4.04%)
-                        8)thermotoga maritima (strain atcc 43589 / msb8 / dsm 3109 / jcm 10099): 7(3.14%)
-                        9)dictyostelium discoideum: 7(3.14%)
-                        10)caldanaerobacter subterraneus subsp. tengcongensis (strain dsm 15242 / jcm 11007 / nbrc 100824 / mb4): 6(2.69%)
-Top 10 alignments by species:
-                        1)monoraphidium neglectum: 6003(26.52%)
-                        2)chlamydomonas reinhardtii: 4607(20.35%)
-                        3)volvox carteri f. nagariensis: 3035(13.41%)
-                        4)coccomyxa subellipsoidea c-169: 1770(7.82%)
-                        5)mus musculus: 1684(7.44%)
-                        6)chlorella variabilis: 938(4.14%)
-                        7)rhodamnia argentea: 525(2.32%)
-                        8)auxenochlorella protothecoides: 458(2.02%)
-                        9)arabidopsis thaliana: 457(2.02%)
-                        10)drosophila melanogaster: 186(0.82%)
 
 ### 2.1 EviGene Pipeline
 
