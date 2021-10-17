@@ -288,8 +288,11 @@ We need to create a single reference transcriptome per species containing one re
 ### 1.3 Contaminant Screening with EnTAP (all libraries at once)
 DIAMOND best overall results
 
-* <i>T. adustus</i> *
-Total unique contaminants: 166(1.05%): 
+| | <i>T. adustus</i> | <i>T. bajacalifornicus</i> | <i>T. "raciborskii"</i> |
+| :------: | :------: |  :------: |  :------: |
+| * Total unique contaminants * | 166(1.05%) |  :------: |  :------: |
+| * Amoebozoa * | 4.22% |  :------: |  :------: |
+
 Flagged contaminants (all % based on total contaminants):
                         amoebozoa: 7(4.22%)
                         fungi: 50(30.12%)
