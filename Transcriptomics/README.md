@@ -290,13 +290,13 @@ DIAMOND best overall results
 
 | | <i>T. adustus</i> | <i>T. bajacalifornicus</i> | <i>T. "raciborskii"</i> |
 | :------: | :------: |  :------: |  :------: |
-| *Total unique contaminants* | 166(1.05%) |  236 (1.21%) |  223 (0.98%) |
-| *Amoebozoa* | 4.22% |  11(4.66%) |  7(3.14%) |
-| *Fungi* | 50(30.12%) |  81(34.32%) |  51(22.87%) |
-| *Ciliophora* | 4(2.41%) |  1(0.42%) |  4(1.79%) |
-| *Bacteria* | 105(63.25%) |  143(60.59%) |  161(72.20%) |
+| <b>Total unique contaminants<b> | 166(1.05%) |  236 (1.21%) |  223 (0.98%) |
+| <b>Amoebozoa<b> | 4.22% |  11(4.66%) |  7(3.14%) |
+| <b>Fungi<b> | 50(30.12%) |  81(34.32%) |  51(22.87%) |
+| <b>Ciliophora<b> | 4(2.41%) |  1(0.42%) |  4(1.79%) |
+| <b>Bacteria<b> | 105(63.25%) |  143(60.59%) |  161(72.20%) |
 | :------: | :------: |  :------: |  :------: |
-| Top 10 contaminants | <i>Saccharomyces cerevisiae<i> 16(9.64%) |  <i>Schizosaccharomyces pombe<i> 25(10.59%) |  <i>Schizosaccharomyces pombe<i> 17(7.62%) |
+| <b>Top 10 contaminants<b> | <i>Saccharomyces cerevisiae<i> 16(9.64%) |  <i>Schizosaccharomyces pombe<i> 25(10.59%) |  <i>Schizosaccharomyces pombe<i> 17(7.62%) |
 |  | <i>Synechocystis<i> sp. 12(7.23%) | <i>Bacillus subtilis<i> 16(6.78%)  | <i>Yersinia enterocolitica<i> 15(6.73%) |
 |  | <i>Yersinia enterocolitica<i> 11(6.63%) | <i>Saccharomyces cerevisiae<i> 15(6.36%) | <i>Bacillus subtilis<i> 13(5.83%) |
 |  | <i>Schizosaccharomyces pombe<i> 10(6.02%) | <i>Yersinia enterocolitica<i> 14(5.93%)  | <i>Saccharomyces cerevisiae<i> 12(5.38%) |
@@ -307,7 +307,7 @@ DIAMOND best overall results
 |  | <i>Bacillus subtilis<i> 6(3.61%) | <i>Desulforudis audaxviator<i> 7(2.97%) | <i>Dictyostelium discoideum<i> 7(3.14%) |
 |  | <i>Neurospora crassa<i> 5(3.01%) | <i>Synechococcus<i> sp. 7(2.97%) | <i>Caldanaerobacter subterraneus<i> 6(2.69%) |
 | :------: | :------: |  :------: |  :------: |
-| Top 10 alignments by species | :------: |  <i>Monoraphidium neglectum<i> 5874(29.99%)| <i>Monoraphidium neglectum<i>  6003(26.52%) |
+| <b>Top 10 alignments by species<b> | :------: |  <i>Monoraphidium neglectum<i> 5874(29.99%)| <i>Monoraphidium neglectum<i>  6003(26.52%) |
 | :------: | :------: |  <i>Chlamydomonas reinhardtii<i> 4310(22.01%) | <i>Chlamydomonas reinhardtii<i> 4607(20.35%) |
 | :------: | :------: |  <i>Volvox carteri f. nagariensis<i> 2748(14.03%) | <i>Volvox carteri f. nagariensis<i> 3035(13.41%) |
 | :------: | :------: |  <i>Coccomyxa subellipsoidea<i> 1912(9.76%) | <i>Coccomyxa subellipsoidea<i> 1770(7.82%) |
