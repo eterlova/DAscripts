@@ -322,4 +322,7 @@ DIAMOND best overall results
 ### 2.1 EviGene Pipeline
 
 ### 2.2 Contaminant screening with EnTAP
-
+Protein files for each library from EviGene were run through EnTAP to identify contaminants for removal. We used RefSeq Diamond database, 70/70 coverage; amoebozoa, cilliates, fungi, and bacteria were indicated as possible contaminants.
+        
+General results are presented on this figure:
+[trinity_evigene_entap](https://github.com/eterlova/DAscripts/blob/main/Transcriptomics/Images/trinity_evigene_entap.png "EnTAP 70/70 on EviGene"
