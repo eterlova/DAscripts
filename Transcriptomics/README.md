@@ -320,6 +320,9 @@ DIAMOND best overall results
 
 
 ### 2.1 EviGene Pipeline
+We used EviGene pipeline is an alternative to VSearch in the search of genes in the Trinity assemblies. Busco results are presented on the figure:
+
+![trinity_evigene_busco](https://github.com/eterlova/DAscripts/blob/main/Transcriptomics/Images/trinity_evigene_busco.png "BUSCO EviGene")
 
 ### 2.2 Contaminant screening with EnTAP
 Protein files for each library from EviGene were run through EnTAP to identify contaminants for removal. We used RefSeq Diamond database, 70/70 coverage; amoebozoa, cilliates, fungi, and bacteria were indicated as possible contaminants.
