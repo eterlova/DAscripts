@@ -326,4 +326,4 @@ Protein files for each library from EviGene were run through EnTAP to identify c
         
 General results are presented on this figure:
         
-[trinity_evigene_entap]: https://github.com/eterlova/DAscripts/blob/main/Transcriptomics/Images/trinity_evigene_entap.png "EnTAP 70/70 on EviGene"
+![trinity_evigene_entap](https://github.com/eterlova/DAscripts/blob/main/Transcriptomics/Images/trinity_evigene_entap.png "EnTAP 70/70 on EviGene")
