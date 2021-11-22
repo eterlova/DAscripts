@@ -890,3 +890,116 @@ QUAST results on initial assemlies:
     <td></td>
   </tr>
 </table>        
+
+## 4. Mapping RNA reads to assemblies
+Results of mapping to the Canu assembly (Flye mirrors the patterns but the values are low)
+<table>
+  <tr>
+    <td></td>
+    <td colspan="6"><i>T. adustus</i> (JT2-VF29)</td>
+  </tr>
+  <tr>
+    <td><br>Barcode #</br></td>      
+    <td><br>Library #</br></td>
+    <td><br>Raw RNA reads % mapped</br></td>
+    <td><br>Raw RNA reads # mapped</br></td>
+    <td><br>Kraken-filtered RNA reads % mapped</br></td>
+    <td><br>Kraken-filtered RNA reads # mapped</br></td>
+  </tr>
+  <tr>
+    <td>193</td>     
+    <td>ET3</td> 
+    <td>68.75</td>
+    <td>---</td>
+    <td>69.02%</td>
+    <td>122349080</td> 
+  </tr>
+  <tr>
+    <td>127</td>     
+    <td>ET10</td> 
+    <td>89%</td>
+    <td>---</td>
+    <td>90.52%</td>
+    <td>32373366</td> 
+  </tr>
+  <tr>
+    <td>304</td>     
+    <td>ET13</td> 
+    <td>91.75%</td>
+    <td>---</td>
+    <td>92.31%</td>
+    <td>33189549</td> 
+  </tr>
+  <tr>
+    <td>615</td>     
+    <td>ET16</td> 
+    <td>74.19%</td>
+    <td>---</td>
+    <td>79.04%</td>
+    <td>16884206</td> 
+  </tr>
+  <tr>
+    <td>400</td>     
+    <td>ET17</td> 
+    <td>89.07%</td>
+    <td>---</td>
+    <td>90.11%</td>
+    <td>22422044</td> 
+  </tr>
+  <tr>
+    <td>190</td>     
+    <td>ET18</td> 
+    <td>91.19%</td>
+    <td>---</td>
+    <td>92.09%</td>
+    <td>26627212</td> 
+  </tr>
+  <tr>
+    <td>224</td>     
+    <td>ET20</td> 
+    <td>91.66%</td>
+    <td>---</td>
+    <td>92.69%</td>
+    <td>26345601</td> 
+  </tr>
+  <tr>
+    <td>9</td>     
+    <td>ET22</td> 
+    <td>93.30</td>
+    <td>---</td>
+    <td>93.81%</td>
+    <td>41544602</td> 
+  </tr>
+  <tr>
+    <td>322</td>     
+    <td>ET25</td> 
+    <td>93.63</td>
+    <td>---</td>
+    <td>93.87%</td>
+    <td>30902056</td> 
+  </tr>
+  <tr>
+    <td>169</td>     
+    <td>ET27</td> 
+    <td>84.22</td>
+    <td>---</td>
+    <td>91.05%</td>
+    <td>19176624</td> 
+  </tr>
+  <tr>
+    <td>111</td>     
+    <td>ET28</td> 
+    <td>58.77%</td>
+    <td>---</td>
+    <td>77.25%</td>
+    <td>10814926</td> 
+  </tr>
+  <tr>
+    <td>482</td>     
+    <td>ET30</td> 
+    <td>93.02</td>
+    <td>---</td>
+    <td>93.4%</td>
+    <td>28079843</td> 
+  </tr>
+</table>
