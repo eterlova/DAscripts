@@ -330,3 +330,27 @@ Protein files for each library from EviGene were run through EnTAP to identify c
 General results are presented on this figure:
         
 ![trinity_evigene_entap](https://github.com/eterlova/DAscripts/blob/main/Transcriptomics/Images/trinity_evigene_entap.png "EnTAP 70/70 on EviGene")
+
+## Differential Expression Analysis with DESeq2
+
+DESeq2 was used to generate DE genes for each species separately (hydrated vs treated and then each time point vs the next), with the log2 fold change being set to diverge from 1.5, and the padj being greater than 0.1. Kallisto "abundance.tsv" files were imported into RStudio using tximport. A tx2gene table
+was generated first:
+<pre style="color: silver; background: black;"> 
+** JT2VF29 **
+$ cd /labs/Lewis/2021DA_transcriptomes/02_Assembly_Trinity/JT2_trinity
+$ for i in 10 13 16 17 18 20 22 25 27 28 30 3; do sed 's/TRINITY/PC1A_TRINITY/g' trinity_ET${i}.Trinity.fasta.gene_trans_map > ET${i}_map.fasta; done
+$ cat ET* >> JT2_map
+$ awk '{ print $2" " $1}' JT2_map | sed '1 i\TXNAME\tGENEID' | sed 's/ /\t/g' > tx2gene_JT2.tsv
+
+** ZA1-7 **
+$ cd /labs/Lewis/2021DA_transcriptomes/02_Assembly_Trinity/ZA17_trinity
+$ for i in 11 12 15 1 21 29 2 31 32 33 34 8; do sed 's/TRINITY/PC1A_TRINITY/g' trinity_ET${i}.Trinity.fasta.gene_trans_map > ET${i}_map.fasta; done
+$ cat ET* >> ZA17_map
+$ awk '{ print $2" " $1}' ZA17_map | sed '1 i\TXNAME\tGENEID' | sed 's/ /\t/g' > tx2gene_ZA17.tsv
+
+** CCAP **
+$ cd cd /labs/Lewis/2021DA_transcriptomes/02_Assembly_Trinity/CCAP_24out_trinity
+$ for i in 14 19 23 26 36 4 5 6 7 9; do sed 's/TRINITY/PC1A_TRINITY/g' trinity_ET${i}.Trinity.fasta.gene_trans_map > ET${i}_map.fasta; done
+$ cat ET* >> CCAP_24out_map
+$ awk '{ print $2" " $1}' CCAP_24out_map| sed '1 i\TXNAME\tGENEID' | sed 's/ /\t/g' > tx2gene_CCAP_24out.tsv
+</pre>
