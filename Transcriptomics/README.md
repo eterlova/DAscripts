@@ -357,19 +357,5 @@ $ awk '{ print $2" " $1}' CCAP_24out_map| sed '1 i\TXNAME\tGENEID' | sed 's/ /\t
 
 the workflow of importing the TSV files for juniper, the script can be found in the DESeq2 directory:
 <pre style="color: silver; background: black;"> 
-library("tximport")
-library("readr")
-library("DESeq2")
-outputPrefix <- "juniper_deseq2"
-setwd("C:/Juniper&Pine/Juniper_tsv")
-filenames <- list.files(pattern="*abundance.tsv", full.names=TRUE)
-tx2gene <- read.table("tx2gene_juniper.tsv", header=TRUE)
-txi.kallisto <- tximport(filenames, type = "kallisto", tx2gene = tx2gene, ignoreTxVersion = TRUE)
-sampleNames <- c("JF1A","JF1J","JF2A","JF2J","JF3A","JF3J")
-colnames(txi.kallisto$counts) <- sampleNames
-sampleCondition <- c("A","J","A","J","A","J")
-sampleTable <- data.frame(Condition = sampleCondition, Sample = sampleNames)
-ddstxi <- DESeqDataSetFromTximport(txi.kallisto, sampleTable, design = ~ Condition)
-treatments <-  c("A","J")
-colData(ddstxi)$Condition <- factor(colData(ddstxi)$Condition, levels = treatments)
+
 </pre>
