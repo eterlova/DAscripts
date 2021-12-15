@@ -355,6 +355,8 @@ $ cat ET* >> CCAP_24out_map
 $ awk '{ print $2" " $1}' CCAP_24out_map| sed '1 i\TXNAME\tGENEID' | sed 's/ /\t/g' > tx2gene_CCAP_24out.tsv
 </pre>
 
+Note: Evigene pipeline adds prefices to transcript names, so both the .tsv and map files have to be trimmed. In tx2gene file i need to be also replaced with t.         
+        
 the workflow of importing the TSV files for juniper, the script can be found in the DESeq2 directory:
 <pre style="color: silver; background: black;"> 
 
