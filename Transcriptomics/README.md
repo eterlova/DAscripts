@@ -361,3 +361,14 @@ the workflow of importing the TSV files for juniper, the script can be found in 
 <pre style="color: silver; background: black;"> 
 
 </pre>
+
+        
+ =======================================================================
+ ## QC the libraries by mapping them to the reference transcriptome, which excludes the low quality and the questionable samples.
+        
+Good samples:
+
+**CCAP** : 04 09 14 23 36
+**JT2-VF29** : all
+**ZA17** : 01 11 15 21 29 31 32 33 34 
+ 
